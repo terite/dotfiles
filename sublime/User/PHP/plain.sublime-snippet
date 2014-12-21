@@ -1,0 +1,7 @@
+<snippet>
+    <content><![CDATA[
+header('Content-Type: text/plain');
+]]></content>
+    <tabTrigger>plain</tabTrigger>
+    <scope>source.php</scope>
+</snippet>

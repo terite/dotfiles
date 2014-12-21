@@ -1,0 +1,53 @@
+call pathogen#runtime_append_all_bundles()
+call pathogen#helptags()
+
+set nocompatible
+set number
+set ruler
+
+filetype on
+filetype plugin on
+syntax enable
+
+" Searching
+set ignorecase smartcase
+set incsearch
+set hlsearch
+nnoremap <ESC><ESC> :nohlsearch<cr>
+
+" No swap files
+set noswapfile
+set nobackup
+set nowb
+set autoread "reload files changed outside of vim
+
+" Indentation
+set smarttab
+set autoindent
+set smartindent
+set softtabstop=4
+set shiftwidth=4
+set tabstop=4
+set expandtab
+
+set showcmd
+set backspace=indent,eol,start
+
+" disable arrow keys
+map <up> <nop>
+map <down> <nop>
+map <left> <nop>
+map <right> <nop>
+
+syntax enable
+set background=dark
+colorscheme molokai
+let g:solarized_bold=0
+
+" Plugins and stuff
+set wildignore+=*.o,*.obj,.git,node_modules
+
+" UltiSnips is pretty darn lovely
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<tab>"
+let g:UltiSnipsJumpBackwardTrigger="<s-tab>"

@@ -1,0 +1,2 @@
+#!/bin/bash
+git log "$1..master" --ancestry-path --merges --reverse --oneline | head -n 1

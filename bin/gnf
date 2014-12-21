@@ -1,0 +1,14 @@
+#!/bin/bash
+set -e
+
+# Creates a new branch based on latest upstream master
+
+if [[ -z $1 ]]; then
+  echo "Usage: gnf <new-branch-name>"
+  exit
+fi
+
+# avoid tracking this branch
+UPSTREAM_HASH=$(git show-ref --hash upstream/master)
+
+git checkout -b $1 $UPSTREAM_HASH

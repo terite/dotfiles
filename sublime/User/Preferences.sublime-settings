@@ -1,0 +1,47 @@
+{
+	"animation_enabled": false,
+	"auto_complete_delay": 100,
+	"bold_folder_labels": true,
+	"caret_style": "wide",
+	"color_scheme": "Packages/Color Scheme - Default/Monokai.tmTheme",
+	"draw_white_space": "all",
+	"ensure_newline_at_eof_on_save": true,
+	"file_exclude_patterns":
+	[
+		"*.pyc",
+		".DS_Store",
+		"composer.phar",
+		"composer.lock"
+	],
+	"folder_exclude_patterns":
+	[
+		".git",
+		".idea",
+		".tmp",
+		"node_modules",
+		"whoosh_index",
+		"vendor",
+		"bower_components",
+		"compiled",
+		"coverage",
+		"dist"
+	],
+	"font_face": "AnonymousPro",
+	"font_size": 15,
+	"gpu_window_buffer": true,
+	"hot_exit": false,
+	"ignored_packages":
+	[
+		"Vintage"
+	],
+	"remember_open_files": false,
+	"rulers":
+	[
+		100
+	],
+	"scroll_past_end": true,
+	"tab_size": 2,
+	"translate_tabs_to_spaces": true,
+	"trim_trailing_white_space_on_save": true,
+	"vintage_lines.force_mode": true
+}
