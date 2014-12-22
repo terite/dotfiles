@@ -1,10 +1,5 @@
 #!/bin/sh
 #
-# Quick shortcut to an editor.
-#
-# This means that as I travel back and forth between editors, hey, I don't have
-# to re-learn any arcane commands. Neat.
-#
 # USAGE:
 #
 #   $ e
@@ -14,8 +9,7 @@
 #   $ e /usr/local
 #   # => opens the specified directory in your editor
 
-
-# We actually don't want to wait.
+# This command generally means we don't want to wait
 test "$EDITOR" = "subl -w" && EDITOR="subl"
 test "$EDITOR" = "mvim -f" && EDITOR="mvim"
 

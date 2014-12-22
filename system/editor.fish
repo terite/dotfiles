@@ -1,1 +1,1 @@
-set -x EDITOR "subl -w"
+set -x EDITOR "vim"
