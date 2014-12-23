@@ -1,8 +1,10 @@
 call pathogen#runtime_append_all_bundles()
 call pathogen#helptags()
 
-" poor, silly vim is allergic to fish
-set shell=/bin/sh
+" Older versions of vim don't behave with fish shell
+if !has("patch-7.4.276") && $SHELL =~ 'bin/fish'
+ set shell=/bin/sh
+endif
 
 set nocompatible
 set number
