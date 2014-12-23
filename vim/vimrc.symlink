@@ -1,6 +1,9 @@
 call pathogen#runtime_append_all_bundles()
 call pathogen#helptags()
 
+" poor, silly vim is allergic to fish
+set shell=/bin/sh
+
 set nocompatible
 set number
 set ruler

@@ -7,9 +7,6 @@ end
 if test -d "$HOME/local/bin"
     set PATH "$HOME/local/bin" $PATH
 end
-if test -d "$HOME/.composer/vendor/bin"
-    set PATH "$HOME/.composer/vendor/bin" $PATH
-end
 
 if test -d "/Applications/Postgres.app/Contents/Versions/9.3/bin"
     set PATH "/Applications/Postgres.app/Contents/Versions/9.3/bin" $PATH

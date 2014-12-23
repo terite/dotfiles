@@ -21,15 +21,12 @@
 
 [core]
 	excludesfile = ~/.gitignore
-	editor = vim
 
 [apply]
 	whitespace = nowarn
 
 [mergetool]
 	keepBackup = false
-
-[difftool]
 
 [help]
 	autocorrect = 1
@@ -57,8 +54,10 @@
 	added = green
 	changed = yellow
 	untracked = red
+
 [push]
 	default = current
+
 [diff]
     tool = vimdiff
 	algorithm = histogram
