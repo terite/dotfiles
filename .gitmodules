@@ -1,39 +1,42 @@
-[submodule "vim/vim.symlink/pathogen"]
-	path = vim/vim.symlink/pathogen
+[submodule "vim/vim/pathogen"]
+	path = vim/vim/pathogen
 	url = http://github.com/tpope/vim-pathogen.git
-[submodule "vim/vim.symlink/bundle/solarized"]
-	path = vim/vim.symlink/bundle/solarized
+[submodule "vim/vim/bundle/solarized"]
+	path = vim/vim/bundle/solarized
 	url = git://github.com/altercation/vim-colors-solarized.git
-[submodule "vim/vim.symlink/bundle/nerdtree"]
-	path = vim/vim.symlink/bundle/nerdtree
+[submodule "vim/vim/bundle/nerdtree"]
+	path = vim/vim/bundle/nerdtree
 	url = https://github.com/scrooloose/nerdtree
-[submodule "vim/vim.symlink/bundle/vim-coffee-script"]
-	path = vim/vim.symlink/bundle/vim-coffee-script
+[submodule "vim/vim/bundle/vim-coffee-script"]
+	path = vim/vim/bundle/vim-coffee-script
 	url = https://github.com/kchmck/vim-coffee-script.git
-[submodule "vim/vim.symlink/bundle/vim-markdown"]
-	path = vim/vim.symlink/bundle/vim-markdown
+[submodule "vim/vim/bundle/vim-markdown"]
+	path = vim/vim/bundle/vim-markdown
 	url = https://github.com/tpope/vim-markdown.git
-[submodule "vim/vim.symlink/bundle/vim-gitignore"]
-	path = vim/vim.symlink/bundle/vim-gitignore
+[submodule "vim/vim/bundle/vim-gitignore"]
+	path = vim/vim/bundle/vim-gitignore
 	url = https://github.com/vitaly/vim-gitignore
-[submodule "vim/vim.symlink/bundle/vim-numbertoggle"]
-	path = vim/vim.symlink/bundle/vim-numbertoggle
+[submodule "vim/vim/bundle/vim-numbertoggle"]
+	path = vim/vim/bundle/vim-numbertoggle
 	url = https://github.com/jeffkreeftmeijer/vim-numbertoggle.git
-[submodule "vim/vim.symlink/bundle/detectindent"]
-	path = vim/vim.symlink/bundle/detectindent
+[submodule "vim/vim/bundle/detectindent"]
+	path = vim/vim/bundle/detectindent
 	url = https://github.com/ciaranm/detectindent.git
 [submodule "fish/virtualfish"]
 	path = fish/virtualfish
 	url = https://github.com/adambrenecki/virtualfish.git
-[submodule "vim/vim.symlink/bundle/vim-fish"]
-	path = vim/vim.symlink/bundle/vim-fish
+[submodule "vim/vim/bundle/vim-fish"]
+	path = vim/vim/bundle/vim-fish
 	url = https://github.com/dag/vim-fish.git
-[submodule "vim/vim.symlink/bundle/editorconfig-vim"]
-	path = vim/vim.symlink/bundle/editorconfig-vim
+[submodule "vim/vim/bundle/editorconfig-vim"]
+	path = vim/vim/bundle/editorconfig-vim
 	url = https://github.com/editorconfig/editorconfig-vim.git
-[submodule "vim/vim.symlink/bundle/ctrlp.vim"]
-	path = vim/vim.symlink/bundle/ctrlp.vim
+[submodule "vim/vim/bundle/ctrlp.vim"]
+	path = vim/vim/bundle/ctrlp.vim
 	url = https://github.com/kien/ctrlp.vim.git
-[submodule "vim/vim.symlink/bundle/vim-git"]
-	path = vim/vim.symlink/bundle/vim-git
+[submodule "vim/vim/bundle/vim-git"]
+	path = vim/vim/bundle/vim-git
 	url = https://github.com/tpope/vim-git.git
+[submodule "dotbot"]
+	path = dotbot
+	url = https://github.com/anishathalye/dotbot.git

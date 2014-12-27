@@ -1,4 +1,4 @@
-set DOTFILES (abspath (dirname (status -f))"/../../..")
+set DOTFILES (abspath (dirname (status -f))"/../..")
 
 for file in $DOTFILES/*/*.fish;
     source $file;

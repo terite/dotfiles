@@ -1,0 +1,16 @@
+- clean: []
+- link:
+    ~/.config/fish:
+        create: true
+        path: fish/fish/
+
+    ~/.gitconfig: git/gitconfig
+    ~/.gitignore: git/gitignore
+
+    ~/.hushlogin: system/hushlogin
+
+    ~/Library/Application Support/Sublime Text 3/Packages/User: sublime/User/
+
+    ~/.vim: vim/vim/
+    ~/.vimrc: vim/vimrc
+    ~/.gvimrc: vim/gvimrc
