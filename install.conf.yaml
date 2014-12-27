@@ -1,4 +1,4 @@
-- clean: []
+- clean: ['~']
 - link:
     ~/.config/fish:
         create: true
@@ -14,3 +14,5 @@
     ~/.vim: vim/vim/
     ~/.vimrc: vim/vimrc
     ~/.gvimrc: vim/gvimrc
+- shell:
+    - [./osx/set-defaults.sh, Set OS X preferred settings]
