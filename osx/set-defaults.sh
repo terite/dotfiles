@@ -2,6 +2,9 @@
 
 # ~/.osx — https://mths.be/osx
 
+# Exit immediately on error
+set -e
+
 # Ask for the administrator password upfront
 sudo -v
 
