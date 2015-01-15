@@ -14,7 +14,7 @@ alias gap="git add -p"
 alias gcm='git checkout master'
 alias gcv='git commit -v'
 alias gg='git grep'
-alias gp='git push origin HEAD'
+alias gp='git push'
 
 # git fetch upstream
 alias gfu="git fetch upstream"

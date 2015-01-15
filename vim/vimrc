@@ -20,6 +20,12 @@ set incsearch
 set hlsearch
 nnoremap <ESC><ESC> :nohlsearch<cr>
 
+" ctrlp fuzzy file search
+let g:ctrlp_cache_dir = $HOME . '/.cache/ctrlp'
+if executable('ag')
+  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+endif
+
 " No swap files
 set noswapfile
 set nobackup

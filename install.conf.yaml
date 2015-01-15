@@ -11,6 +11,8 @@
 
     ~/Library/Application Support/Sublime Text 3/Packages/User: sublime/User/
 
+    ~/.tmux.conf: tmux/tmux.conf
+
     ~/.vim: vim/vim/
     ~/.vimrc: vim/vimrc
     ~/.gvimrc: vim/gvimrc
