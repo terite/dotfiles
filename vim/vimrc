@@ -57,6 +57,10 @@ set background=dark
 colorscheme molokai
 let g:solarized_bold=0
 
+" Show whitespace
+set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<
+set list
+
 " Plugins and stuff
 set wildignore+=*.o,*.obj,.git,node_modules
 
