@@ -2,6 +2,7 @@
 - link:
     ~/.config/fish:
         create: true
+        force: true
         path: fish/fish/
 
     ~/.gitconfig: git/gitconfig
