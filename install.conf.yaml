@@ -10,6 +10,8 @@
 
     ~/.hushlogin: system/hushlogin
 
+    ~/.npmrc: node/npmrc
+
     ~/Library/Application Support/Sublime Text 3/Packages/User: sublime/User/
 
     ~/.tmux.conf: tmux/tmux.conf
