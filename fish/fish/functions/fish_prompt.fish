@@ -15,6 +15,10 @@ function fish_prompt --description 'Write out the prompt'
 		set prompt_status "$__fish_prompt_status [$last_status]$__fish_prompt_normal"
 	end
 
+	if set -q SSH_CLIENT
+		echo -n -s (set_color white) "$USER@" (hostname) (set_color normal) " "
+	end
+
 	if set -q VIRTUAL_ENV
 		echo -n -s (set_color purple) "(" (basename "$VIRTUAL_ENV") ")" (set_color normal) " "
 	end
