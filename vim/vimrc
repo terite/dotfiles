@@ -35,7 +35,6 @@ set autoread "reload files changed outside of vim
 " Indentation
 set smarttab
 set autoindent
-set smartindent
 set softtabstop=4
 set shiftwidth=4
 set tabstop=4
@@ -49,6 +48,9 @@ map <up> <nop>
 map <down> <nop>
 map <left> <nop>
 map <right> <nop>
+" Use tab to navigate splits.
+nnoremap <tab> <C-w><C-w>
+nnoremap <s-tab> <C-w><left>
 
 syntax enable
 set background=dark
@@ -57,6 +59,10 @@ let g:solarized_bold=0
 
 " Plugins and stuff
 set wildignore+=*.o,*.obj,.git,node_modules
+
+" Syntastic is so slow sometimes :(
+let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes': [],'passive_filetypes': [] }
+
 
 " UltiSnips is pretty darn lovely
 let g:UltiSnipsExpandTrigger="<tab>"

@@ -1,23 +1,23 @@
 set PATH "$DOTFILES/bin" $PATH
 
 if test -d "$HOME/bin"
-    set PATH "$HOME/bin" $PATH
+    set PATH $PATH "$HOME/bin"
 end
 
 if test -d "$HOME/local/bin"
-    set PATH "$HOME/local/bin" $PATH
+    set PATH $PATH "$HOME/local/bin"
 end
 
 if test -d "/Applications/Postgres.app/Contents/Versions/9.4/bin"
-    set PATH "/Applications/Postgres.app/Contents/Versions/9.4/bin" $PATH
+    set PATH $PATH "/Applications/Postgres.app/Contents/Versions/9.4/bin"
 end
 
 # Pip
 if test -d "$HOME/Library/Python/2.7/bin"
-    set PATH "$HOME/Library/Python/2.7/bin" $PATH
+    set PATH $PATH "$HOME/Library/Python/2.7/bin"
 end
 
 # macports
 if test -d "/opt/local/bin"
-  set PATH "/opt/local/bin" $PATH
+  set PATH $PATH "/opt/local/bin"
 end
