@@ -1,5 +1,10 @@
 #!/usr/bin/env bash
 
+if test "$(uname)" != 'Darwin'; then
+    echo "Skipping, not OS X"
+    exit
+fi
+
 # ~/.osx — https://mths.be/osx
 
 # Exit immediately on error
