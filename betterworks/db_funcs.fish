@@ -3,7 +3,12 @@ alias listdb='psql --no-align --tuples-only --command "SELECT datname FROM pg_da
 alias whichdb='echo $DATABASE_URL'
 
 function setdb
+    if [ (count $argv) -ne 1 ]
+        echo "Usage: setdb <postgres_db_name>"
+        return 1
+    end
     set --global --export DATABASE_URL "postgresql:/$argv[1]"
+    return 0
 end
 
 complete --command setdb \
