@@ -17,8 +17,13 @@ function setdb
     set --global --export DATABASE_URL "postgresql:/$argv[1]"
     return 0
 end
-
 complete --command setdb \
+    --authoritative \
+    --no-files \
+    --arguments '(listdb)'
+
+alias usedb=setdb
+complete --command usedb \
     --authoritative \
     --no-files \
     --arguments '(listdb)'
@@ -40,3 +45,7 @@ complete --command copydb \
     --no-files \
     --arguments '(listdb)' \
     --condition '__nth_arg_only 1'
+
+complete --command dropdb \
+    --no-files \
+    --arguments '(listdb)'
