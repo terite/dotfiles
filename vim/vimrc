@@ -49,18 +49,24 @@ map <up> <nop>
 map <down> <nop>
 map <left> <nop>
 map <right> <nop>
+
+noremap <space>= :Tabularize /=<cr>
+set colorcolumn=101
+
 " Use tab to navigate splits.
 nnoremap <tab> <C-w><C-w>
 nnoremap <s-tab> <C-w><left>
 
+" Color scheme
 syntax enable
 set background=dark
 colorscheme molokai
 let g:solarized_bold=0
+highlight ColorColumn ctermbg=8
 
-" Show whitespace
+" Show whitespace (default off for now, too distracting)
 set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<
-set list
+"set list
 
 " Plugins and stuff
 set wildignore+=*.o,*.obj,.git,node_modules
