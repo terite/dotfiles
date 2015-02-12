@@ -1,4 +1,11 @@
-alias listdb='psql --no-align --tuples-only --command "SELECT datname FROM pg_database WHERE datistemplate=false"'
+
+function listdb
+    psql \
+        --no-align \
+        --tuples-only \
+        --command "SELECT datname FROM pg_database WHERE datistemplate=false" \
+    | grep -v "^\\($USER\|postgres\)\$"
+end
 
 alias whichdb='echo $DATABASE_URL'
 
