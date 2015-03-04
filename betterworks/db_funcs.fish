@@ -7,7 +7,9 @@ function listdb
     | grep -v "^\\($USER\|postgres\)\$"
 end
 
-alias whichdb='echo $DATABASE_URL'
+function whichdb
+    echo $DATABASE_URL
+end
 
 function setdb
     if [ (count $argv) -ne 1 ]
