@@ -1,17 +1,33 @@
-call pathogen#runtime_append_all_bundles()
-call pathogen#helptags()
-
-" Older versions of vim don't behave with fish shell
-if !has("patch-7.4.276") && $SHELL =~ 'bin/fish'
- set shell=/bin/sh
-endif
-
 set nocompatible
+filetype off
+set rtp+=~/.vim/bundle/vundle/
+set shell=/bin/bash
+
+call vundle#begin()
+
+Bundle 'gmarik/Vundle.vim'
+
+Bundle 'altercation/vim-colors-solarized'
+Bundle 'ciaranm/detectindent'
+Bundle 'dag/vim-fish'
+Bundle 'editorconfig/editorconfig-vim'
+Bundle 'godlygeek/tabular'
+Bundle 'groenewege/vim-less'
+Bundle 'jeffkreeftmeijer/vim-numbertoggle'
+Bundle 'kchmck/vim-coffee-script'
+Bundle 'kien/ctrlp.vim'
+Bundle 'scrooloose/nerdtree'
+Bundle 'scrooloose/syntastic'
+Bundle 'tpope/vim-git'
+Bundle 'tpope/vim-markdown'
+Bundle 'vitaly/vim-gitignore'
+
+call vundle#end()
+filetype plugin indent on
+
 set number
 set ruler
 
-filetype on
-filetype plugin on
 syntax enable
 
 " Searching
@@ -30,7 +46,6 @@ let g:ctrlp_match_window = 'results:100'
 " No swap files
 set noswapfile
 set nobackup
-set nowb
 set autoread "reload files changed outside of vim
 
 " Indentation
