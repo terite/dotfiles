@@ -1,6 +1,0 @@
-<snippet>
-	<tabTrigger>nei</tabTrigger>
-	<content><![CDATA[
-throw new \Exception('Not Implemented');
-]]></content>
-</snippet>
