@@ -20,4 +20,5 @@
     ~/.vimrc: vim/vimrc
     ~/.gvimrc: vim/gvimrc
 - shell:
+    - [vim +PluginInstall +qall, Install Vundle plugins]
     - [./osx/set-defaults.sh, Set OS X preferred settings]
