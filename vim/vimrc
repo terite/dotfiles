@@ -19,6 +19,7 @@ Plugin 'henrik/vim-indexed-search'
 Plugin 'jeffkreeftmeijer/vim-numbertoggle'
 Plugin 'kchmck/vim-coffee-script'
 Plugin 'kien/ctrlp.vim'
+Plugin 'rking/ag.vim'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/syntastic'
@@ -103,8 +104,13 @@ set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<
 " Plugins and stuff
 set wildignore+=*.o,*.obj,.git,node_modules
 
+" NERDCommenter
+let g:NERDSpaceDelims = 1
+let g:syntastic_debug = 0
+
 " Syntastic is so slow sometimes :(
-let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes': [],'passive_filetypes': [] }
+" let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes': [],'passive_filetypes': [] }
+let g:syntastic_python_checkers = ['flake8']
 
 noremap <C-k>b :NERDTreeToggle<cr>
 
