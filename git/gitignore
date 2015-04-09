@@ -6,3 +6,4 @@
 .idea
 doc/tags
 /fish/config.symlink/fish/generated_completions
+.ropeproject

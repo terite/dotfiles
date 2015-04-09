@@ -1,24 +1,33 @@
 - clean: ['~']
 - link:
+
+    # ag
+    ~/.agignore: ag/agignore
+
+    # fish
     ~/.config/fish:
         create: true
         force: true
         path: fish/fish/
 
+    # git
     ~/.gitconfig: git/gitconfig
     ~/.gitignore: git/gitignore
 
     ~/.hushlogin: system/hushlogin
 
+    # node
     ~/.npmrc: node/npmrc
 
+    # tmux
     ~/.tmux.conf: tmux/tmux.conf
 
+    # vim & nvim
     ~/.vim: vim/vim/
     ~/.vimrc: vim/vimrc
-
     ~/.nvim: vim/vim/
     ~/.nvimrc: vim/vimrc
+
 - shell:
     - [vim +PluginInstall +qall, Install Vundle plugins]
     - [./osx/set-defaults.sh, Set OS X preferred settings]

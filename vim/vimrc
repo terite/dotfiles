@@ -19,17 +19,24 @@ Plugin 'henrik/vim-indexed-search'
 Plugin 'jeffkreeftmeijer/vim-numbertoggle'
 Plugin 'kchmck/vim-coffee-script'
 Plugin 'kien/ctrlp.vim'
+Plugin 'klen/python-mode'
 Plugin 'rking/ag.vim'
-Plugin 'scrooloose/nerdcommenter'
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/syntastic'
+Plugin 'tpope/vim-commentary'
+Plugin 'tpope/vim-eunuch'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-git'
 Plugin 'tpope/vim-markdown'
+Plugin 'tpope/vim-surround'
 Plugin 'vitaly/vim-gitignore'
 
 call vundle#end()
 filetype plugin indent on
+
+" fzf https://github.com/junegunn/fzf
+" set rtp+=~/.fzf
+" noremap <c-p> :FZF<cr>
 
 set number
 set ruler
@@ -45,7 +52,7 @@ nnoremap <ESC><ESC> :nohlsearch<cr>
 " ctrlp fuzzy file search
 let g:ctrlp_cache_dir = $HOME . '/.cache/ctrlp'
 if executable('ag')
-  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+  let g:ctrlp_user_command = 'ag %s -l --nocolor --hidden -g ""'
 endif
 let g:ctrlp_match_window = 'results:100'
 
@@ -56,7 +63,6 @@ set autoread "reload files changed outside of vim
 
 " Indentation
 set smarttab
-set autoindent
 set softtabstop=4
 set shiftwidth=4
 set tabstop=4
@@ -69,11 +75,25 @@ set backspace=indent,eol,start
 set wildmode=list:longest
 set wildmenu
 
+" Indentation
+set foldmethod=indent
+set nofoldenable
+
 " disable arrow keys
 map <up> <nop>
 map <down> <nop>
 map <left> <nop>
 map <right> <nop>
+
+" Give up and admit that I hold shift for too long
+cab Wq wq
+cab W w
+cab WQ wq
+cab Q q
+cab Vs vs
+cab VS vs
+cab Qa qa
+cab QA qa
 
 noremap <space>= :Tabularize /^[^=]*\zs=<cr>
 noremap <space>, :Tabularize /^[^,]*\zs,<cr>
@@ -84,10 +104,8 @@ nnoremap <tab> <C-w><C-w>
 nnoremap <s-tab> <C-w><left>
 
 " Color scheme
-syntax enable
 set background=dark
 colorscheme molokai
-let g:solarized_bold=0
 highlight ColorColumn ctermbg=8
 
 if &term =~ '256color'
@@ -102,14 +120,19 @@ set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<
 "set list
 
 " Plugins and stuff
-set wildignore+=*.o,*.obj,.git,node_modules
+set wildignore+=*.o,*.obj,.git,node_modules,bower_components
 
 " NERDCommenter
 let g:NERDSpaceDelims = 1
 let g:syntastic_debug = 0
 
-" Syntastic is so slow sometimes :(
-" let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes': [],'passive_filetypes': [] }
+" python-mode
+let g:pymode_lint = 0
+let g:pymode_rope = 0
+let g:pymode_indent = 0
+let g:pymode_options_max_line_length = 100
+
+" Syntastic
 let g:syntastic_python_checkers = ['flake8']
 
 noremap <C-k>b :NERDTreeToggle<cr>

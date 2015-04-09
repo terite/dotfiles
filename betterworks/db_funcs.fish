@@ -8,7 +8,12 @@ function listdb
 end
 
 function whichdb
-    echo $DATABASE_URL
+    if not set -q DATABASE_URL
+        # No database url
+        return 1
+    end
+    echo $DATABASE_URL | sed -E '/^postgresql:\//{s///;q}; /^postgresql:\//!{q1}'
+    return $status
 end
 
 function setdb
@@ -49,5 +54,22 @@ complete --command copydb \
     --condition '__nth_arg_only 1'
 
 complete --command dropdb \
+    --no-files \
+    --arguments '(listdb)'
+
+function dropconnections
+    if [ (count $argv) -ne 1 ]
+        echo "Usage: dropconnections <postgres_db_name>"
+        return 1
+    end
+    psql --command "
+    SELECT pg_terminate_backend(pg_stat_activity.pid)
+    FROM pg_stat_activity
+    WHERE pg_stat_activity.datname = '$argv[1]'
+      AND pid <> pg_backend_pid();
+    "
+end
+complete --command dropconnections \
+    --authoritative \
     --no-files \
     --arguments '(listdb)'
