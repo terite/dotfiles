@@ -116,8 +116,9 @@ if &term =~ '256color'
 endif
 
 " Show whitespace (default off for now, too distracting)
-set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<
-"set list
+set listchars=eol:¬,tab:▸\ ,trail:~,extends:>,precedes:<
+nmap <leader>l :set list!<CR>
+set nolist
 
 " Plugins and stuff
 set wildignore+=*.o,*.obj,.git,node_modules,bower_components
