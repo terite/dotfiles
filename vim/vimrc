@@ -20,7 +20,6 @@ Plugin 'jeffkreeftmeijer/vim-numbertoggle'
 Plugin 'kchmck/vim-coffee-script'
 " Plugin 'kien/ctrlp.vim'
 " Plugin 'klen/python-mode'
-Plugin 'mattn/emmet-vim'
 Plugin 'rking/ag.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/syntastic'
@@ -141,11 +140,6 @@ let g:pymode_options_max_line_length = 100
 
 " Syntastic
 let g:syntastic_python_checkers = ['flake8']
-
-" emmet-vim for building html from stuff like li > a.class
-let g:user_emmet_install_global = 0
-autocmd FileType html,css EmmetInstall
-imap <expr> <tab> emmet#expandAbbrIntelligent("\<tab>")
 
 noremap <C-k>b :NERDTreeToggle<cr>
 
