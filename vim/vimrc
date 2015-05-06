@@ -18,7 +18,7 @@ Plugin 'groenewege/vim-less'
 " Plugin 'henrik/vim-indexed-search'
 Plugin 'jeffkreeftmeijer/vim-numbertoggle'
 Plugin 'kchmck/vim-coffee-script'
-Plugin 'kien/ctrlp.vim'
+" Plugin 'kien/ctrlp.vim'
 " Plugin 'klen/python-mode'
 Plugin 'mattn/emmet-vim'
 Plugin 'rking/ag.vim'
@@ -37,8 +37,8 @@ call vundle#end()
 filetype plugin indent on
 
 " fzf https://github.com/junegunn/fzf
-" set rtp+=~/.fzf
-" noremap <c-p> :FZF<cr>
+set rtp+=~/.fzf
+noremap <c-p> :FZF<cr>
 
 set number
 set ruler
