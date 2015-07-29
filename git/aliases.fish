@@ -27,3 +27,14 @@ alias merged="git branch --merged upstream/master"
 
 # get hash for upstream/master
 # git show-ref --hash upstream/master
+
+function gco
+  command git checkout $argv;
+end
+
+function __fish_git_local_branches
+  command git branch --no-color ^/dev/null | sgrep -v ' -> ' | sed -e 's/^..//'
+end
+
+complete --command gco --no-files --authoritative --arguments '(__fish_git_local_branches)'
+
