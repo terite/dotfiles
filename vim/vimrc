@@ -131,6 +131,7 @@ let g:syntastic_debug = 0
 
 " vim-dispatch
 nnoremap <leader>t :Make %<cr>
+set pastetoggle=<leader>p
 
 " python-mode
 let g:pymode_lint = 0
