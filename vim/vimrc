@@ -7,6 +7,7 @@ call vundle#begin()
 
 Plugin 'gmarik/Vundle.vim'
 
+Plugin '5long/pytest-vim-compiler'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'ciaranm/detectindent'
 Plugin 'dag/vim-fish'
@@ -18,6 +19,8 @@ Plugin 'groenewege/vim-less'
 " Plugin 'henrik/vim-indexed-search'
 Plugin 'jeffkreeftmeijer/vim-numbertoggle'
 Plugin 'kchmck/vim-coffee-script'
+Plugin 'mindriot101/vim-pytest-runner'
+
 " Plugin 'kien/ctrlp.vim'
 " Plugin 'klen/python-mode'
 Plugin 'rking/ag.vim'
