@@ -12,7 +12,7 @@ function whichdb
         # No database url
         return 1
     end
-    echo $DATABASE_URL | sed -E '/^postgresql:\//{s///;q}; /^postgresql:\//!{q1}'
+    echo $DATABASE_URL | perl -pe 's/postgresql:\/(\w+)/\1/s'
     return $status
 end
 
