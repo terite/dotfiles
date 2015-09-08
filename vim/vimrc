@@ -36,6 +36,10 @@ Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-unimpaired'
 Plugin 'vitaly/vim-gitignore'
 
+Plugin 'mgedmin/pythonhelper.vim'
+Plugin 'SirVer/ultisnips'
+Plugin 'honza/vim-snippets'
+
 call vundle#end()
 filetype plugin indent on
 
