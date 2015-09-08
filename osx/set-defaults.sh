@@ -41,7 +41,7 @@ defaults write NSGlobalDomain PMPrintingExpandedStateForPrint2 -bool true
 defaults write NSGlobalDomain NSDocumentSaveNewDocumentsToCloud -bool false
 
 # Disable the “Are you sure you want to open this application?” dialog
-defaults write com.apple.LaunchServices LSQuarantine -bool false
+# defaults write com.apple.LaunchServices LSQuarantine -bool false
 
 # Display ASCII control characters using caret notation in standard text views
 # Try e.g. `cd /tmp; unidecode "\x{0000}" > cc.txt; open -e cc.txt`
@@ -58,7 +58,7 @@ defaults write com.apple.helpviewer DevMode -bool true
 sudo defaults write /Library/Preferences/com.apple.loginwindow AdminHostInfo HostName
 
 # Disable Notification Center and remove the menu bar icon
-launchctl unload -w /System/Library/LaunchAgents/com.apple.notificationcenterui.plist 2> /dev/null
+# launchctl unload -w /System/Library/LaunchAgents/com.apple.notificationcenterui.plist 2> /dev/null
 
 # Disable smart quotes as they’re annoying when typing code
 defaults write NSGlobalDomain NSAutomaticQuoteSubstitutionEnabled -bool false
@@ -81,15 +81,15 @@ sudo pmset -a sms 0
 ###############################################################################
 
 # Trackpad: enable tap to click for this user and for the login screen
-defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -bool true
-defaults -currentHost write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
-defaults write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
+# defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -bool true
+# defaults -currentHost write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
+# defaults write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
 
 # Disable “natural” (Lion-style) scrolling
-defaults write NSGlobalDomain com.apple.swipescrolldirection -bool false
+# defaults write NSGlobalDomain com.apple.swipescrolldirection -bool false
 
 # Increase sound quality for Bluetooth headphones/headsets
-defaults write com.apple.BluetoothAudioAgent "Apple Bitpool Min (editable)" -int 40
+# defaults write com.apple.BluetoothAudioAgent "Apple Bitpool Min (editable)" -int 40
 
 # Enable full keyboard access for all controls
 # (e.g. enable Tab in modal dialogs)
@@ -106,8 +106,8 @@ defaults write NSGlobalDomain KeyRepeat -int 0
 ###############################################################################
 
 # Require password immediately after sleep or screen saver begins
-defaults write com.apple.screensaver askForPassword -int 1
-defaults write com.apple.screensaver askForPasswordDelay -int 0
+# defaults write com.apple.screensaver askForPassword -int 1
+# defaults write com.apple.screensaver askForPasswordDelay -int 0
 
 # Enable subpixel font rendering on non-Apple LCDs
 defaults write NSGlobalDomain AppleFontSmoothing -int 2
@@ -127,8 +127,8 @@ defaults write com.apple.finder DisableAllAnimations -bool true
 
 # Set Desktop as the default location for new Finder windows
 # For other paths, use `PfLo` and `file:///full/path/here/`
-defaults write com.apple.finder NewWindowTarget -string "PfDe"
-defaults write com.apple.finder NewWindowTargetPath -string "file://${HOME}/Desktop/"
+# defaults write com.apple.finder NewWindowTarget -string "PfDe"
+# defaults write com.apple.finder NewWindowTargetPath -string "file://${HOME}/Desktop/"
 
 # Show icons for hard drives, servers, and removable media on the desktop
 defaults write com.apple.finder ShowExternalHardDrivesOnDesktop -bool true
@@ -194,7 +194,7 @@ defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
 defaults write com.apple.finder FXPreferredViewStyle -string "Nlsv"
 
 # Empty Trash securely by default
-defaults write com.apple.finder EmptyTrashSecurely -bool true
+# defaults write com.apple.finder EmptyTrashSecurely -bool true
 
 # Enable AirDrop over Ethernet and on unsupported Macs running Lion
 defaults write com.apple.NetworkBrowser BrowseAllInterfaces -bool true
@@ -217,58 +217,58 @@ defaults write com.apple.finder FXInfoPanesExpanded -dict \
 ###############################################################################
 
 # Enable highlight hover effect for the grid view of a stack (Dock)
-defaults write com.apple.dock mouse-over-hilite-stack -bool true
+# defaults write com.apple.dock mouse-over-hilite-stack -bool true
 
 # Set the icon size of Dock items to 36 pixels
-defaults write com.apple.dock tilesize -int 36
+# defaults write com.apple.dock tilesize -int 36
 
 # Change minimize/maximize window effect
-defaults write com.apple.dock mineffect -string "scale"
+# defaults write com.apple.dock mineffect -string "scale"
 
 # Enable spring loading for all Dock items
-defaults write com.apple.dock enable-spring-load-actions-on-all-items -bool true
+# defaults write com.apple.dock enable-spring-load-actions-on-all-items -bool true
 
 # Show indicator lights for open applications in the Dock
-defaults write com.apple.dock show-process-indicators -bool true
+# defaults write com.apple.dock show-process-indicators -bool true
 
 # Don’t animate opening applications from the Dock
-defaults write com.apple.dock launchanim -bool false
+# defaults write com.apple.dock launchanim -bool false
 
 # Speed up Mission Control animations
-defaults write com.apple.dock expose-animation-duration -float 0.1
+# defaults write com.apple.dock expose-animation-duration -float 0.1
 
 # Don’t group windows by application in Mission Control
 # (i.e. use the old Exposé behavior instead)
-defaults write com.apple.dock expose-group-by-app -bool false
+# defaults write com.apple.dock expose-group-by-app -bool false
 
 # Disable Dashboard
-defaults write com.apple.dashboard mcx-disabled -bool true
+# defaults write com.apple.dashboard mcx-disabled -bool true
 
 # Don’t show Dashboard as a Space
-defaults write com.apple.dock dashboard-in-overlay -bool true
+# defaults write com.apple.dock dashboard-in-overlay -bool true
 
 # Don’t automatically rearrange Spaces based on most recent use
-defaults write com.apple.dock mru-spaces -bool false
+# defaults write com.apple.dock mru-spaces -bool false
 
 # Remove the auto-hiding Dock delay
-defaults write com.apple.dock autohide-delay -float 0
+# defaults write com.apple.dock autohide-delay -float 0
 # Remove the animation when hiding/showing the Dock
-defaults write com.apple.dock autohide-time-modifier -float 0
+# defaults write com.apple.dock autohide-time-modifier -float 0
 
 # Automatically hide and show the Dock
-defaults write com.apple.dock autohide -bool true
+# defaults write com.apple.dock autohide -bool true
 
 # Make Dock icons of hidden applications translucent
 defaults write com.apple.dock showhidden -bool true
 
 # Disable the Launchpad gesture (pinch with thumb and three fingers)
-defaults write com.apple.dock showLaunchpadGestureEnabled -int 0
+# defaults write com.apple.dock showLaunchpadGestureEnabled -int 0
 
 # Reset Launchpad, but keep the desktop wallpaper intact
-find "${HOME}/Library/Application Support/Dock" -name "*-*.db" -maxdepth 1 -delete
+# find "${HOME}/Library/Application Support/Dock" -name "*-*.db" -maxdepth 1 -delete
 
 # Add iOS Simulator to Launchpad
-sudo ln -sf "/Applications/Xcode.app/Contents/Developer/Applications/iOS Simulator.app" "/Applications/iOS Simulator.app"
+# sudo ln -sf "/Applications/Xcode.app/Contents/Developer/Applications/iOS Simulator.app" "/Applications/iOS Simulator.app"
 
 # Add a spacer to the left side of the Dock (where the applications are)
 #defaults write com.apple.dock persistent-apps -array-add '{tile-data={}; tile-type="spacer-tile";}'
