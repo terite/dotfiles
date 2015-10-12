@@ -21,7 +21,6 @@ Plugin 'jeffkreeftmeijer/vim-numbertoggle'
 Plugin 'kchmck/vim-coffee-script'
 Plugin 'mindriot101/vim-pytest-runner'
 
-" Plugin 'kien/ctrlp.vim'
 " Plugin 'klen/python-mode'
 Plugin 'rking/ag.vim'
 Plugin 'scrooloose/nerdtree'
@@ -57,13 +56,6 @@ set ignorecase smartcase
 set incsearch
 set hlsearch
 nnoremap <ESC><ESC> :nohlsearch<cr>
-
-" ctrlp fuzzy file search
-let g:ctrlp_cache_dir = $HOME . '/.cache/ctrlp'
-if executable('ag')
-  let g:ctrlp_user_command = 'ag %s -l --nocolor --hidden -g ""'
-endif
-let g:ctrlp_match_window = 'results:100'
 
 " No swap files
 set noswapfile
@@ -125,6 +117,9 @@ cabbrev pz Pz
 cabbrev px Px
 cabbrev pv Pv
 
+" use \p to toggle paste node
+set pastetoggle=<leader>p
+
 " Use tab to navigate splits.
 nnoremap <tab> <C-w><C-w>
 nnoremap <s-tab> <C-w><left>
@@ -146,16 +141,10 @@ set listchars=eol:¬,tab:▸\ ,trail:~,extends:>,precedes:<
 nmap <leader>l :set list!<CR>
 set nolist
 
-" Plugins and stuff
 set wildignore+=*.o,*.obj,.git,node_modules,bower_components
-
-" NERDCommenter
-let g:NERDSpaceDelims = 1
-let g:syntastic_debug = 0
 
 " vim-dispatch
 nnoremap <leader>t :Make %<cr>
-set pastetoggle=<leader>p
 
 " python-mode
 let g:pymode_lint = 0
@@ -168,7 +157,7 @@ let g:syntastic_python_checkers = ['flake8']
 
 noremap <C-k>b :NERDTreeToggle<cr>
 
-" UltiSnips is pretty darn lovely
+" UltiSnips
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<tab>"
 let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
