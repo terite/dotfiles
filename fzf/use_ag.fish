@@ -1,1 +1,1 @@
-set -x FZF_DEFAULT_COMMAND 'ag -l -g ""'
+set -x FZF_DEFAULT_COMMAND 'ag --hidden -l -g ""'
