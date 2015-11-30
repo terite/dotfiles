@@ -1,9 +1,9 @@
 set nocompatible
 filetype off
-set rtp+=~/.vim/bundle/Vundle.vim/
+set rtp+=~/.config/nvim/bundle/Vundle.vim/
 set shell=/bin/bash
 
-call vundle#begin()
+call vundle#begin('$HOME/.config/nvim/bundle')
 
 Plugin 'gmarik/Vundle.vim'
 

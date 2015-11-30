@@ -22,11 +22,12 @@
     # tmux
     ~/.tmux.conf: tmux/tmux.conf
 
-    # vim & nvim
+    # neovim
+    ~/.config/nvim: vim/vim/
+
+    # support vim too
     ~/.vim: vim/vim/
-    ~/.vimrc: vim/vimrc
-    ~/.nvim: vim/vim/
-    ~/.nvimrc: vim/vimrc
+    ~/.vimrc: vim/vim/init.vim
 
 - shell:
     - [vim +PluginInstall +qall, Install Vundle plugins]
