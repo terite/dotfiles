@@ -31,4 +31,3 @@
 
 - shell:
     - [vim +PluginInstall +qall, Install Vundle plugins]
-    - [./osx/set-defaults.sh, Set OS X preferred settings]
