@@ -1,0 +1,3 @@
+#!/bin/bash
+
+ssh "$(echo $SSH_CLIENT | cut -f1 -d ' ')" "${BASH_ARGV[*]}"
