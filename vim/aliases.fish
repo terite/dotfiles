@@ -10,3 +10,4 @@ end
 
 alias vim "$vim_cmd"
 alias vi "$vim_cmd"
+set -x EDITOR "$vim_cmd"
