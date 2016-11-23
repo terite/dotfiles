@@ -39,6 +39,8 @@ Plugin 'mgedmin/pythonhelper.vim'
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
 
+Plugin 'davidhalter/jedi-vim'
+
 call vundle#end()
 filetype plugin indent on
 
