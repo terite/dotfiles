@@ -8,5 +8,5 @@ else if test -e $mvim_vim;
     set vim_cmd $mvim_vim
 end
 
-alias vim "$vim_cmd -w ~/vimout.txt"
-alias vi "$vim_cmd -w ~/vimout.txt"
+alias vim "$vim_cmd"
+alias vi "$vim_cmd"

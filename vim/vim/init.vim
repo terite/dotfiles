@@ -1,45 +1,79 @@
 set nocompatible
 filetype off
-set rtp+=~/.config/nvim/bundle/Vundle.vim/
 set shell=/bin/bash
-
+set rtp+=~/.config/nvim/bundle/Vundle.vim/
 call vundle#begin('$HOME/.config/nvim/bundle')
 
-Plugin 'gmarik/Vundle.vim'
+Plugin 'VundleVim/Vundle.vim'
 
-Plugin '5long/pytest-vim-compiler'
-Plugin 'altercation/vim-colors-solarized'
-Plugin 'ciaranm/detectindent'
+" support for editing .fish scripts
 Plugin 'dag/vim-fish'
+
+" Read .editorconfig files and apply settings to vim
 Plugin 'editorconfig/editorconfig-vim'
+
+" provides molokai
 Plugin 'flazz/vim-colorschemes'
+
+" Tabularize, for aligning = and such
 Plugin 'godlygeek/tabular'
+
+" highlights the matching HTML tag when the cursor is positioned on a tag.
 Plugin 'gregsexton/MatchTag'
+
+" syntax highlighting, indenting and autocompletion for .less stylesheets
 Plugin 'groenewege/vim-less'
-" Plugin 'henrik/vim-indexed-search'
+
+" when searching prints 'At match #N out of M matches'.
+Plugin 'henrik/vim-indexed-search'
+
+" relative line numbers in normal mode, absolute in insert mode
 Plugin 'jeffkreeftmeijer/vim-numbertoggle'
+
+" support for editing .coffee files
 Plugin 'kchmck/vim-coffee-script'
-Plugin 'mindriot101/vim-pytest-runner'
 
-" Plugin 'klen/python-mode'
-Plugin 'rking/ag.vim'
-Plugin 'scrooloose/nerdtree'
+" shows syntax/style errors for files while editing
 Plugin 'scrooloose/syntastic'
+
+" file browser sidebar
+Plugin 'scrooloose/nerdtree'
+
+" provides a motion for commenting out lines of code
 Plugin 'tpope/vim-commentary'
-Plugin 'tpope/vim-dispatch'
+
+" Unix helpers like :Remove, :Mkdir, and :SudoWrite
 Plugin 'tpope/vim-eunuch'
+
+" git helpers like :Gmerge and :Gblame
 Plugin 'tpope/vim-fugitive'
+
+" syntax, indent, and filetype plugin files for git file formats
 Plugin 'tpope/vim-git'
-Plugin 'tpope/vim-markdown'
+
+" helpers to change delimiters around text
 Plugin 'tpope/vim-surround'
+
+" helpers like ]q for :cnext and [q for :cprevious
 Plugin 'tpope/vim-unimpaired'
-Plugin 'vitaly/vim-gitignore'
 
-Plugin 'mgedmin/pythonhelper.vim'
-Plugin 'SirVer/ultisnips'
-Plugin 'honza/vim-snippets'
+" TODO: remove if I don't need this
+" Plugin 'vitaly/vim-gitignore'
+" Plugin 'ciaranm/detectindent'
 
+" TODO: reenable later if I can get it to work
+Plugin '5long/pytest-vim-compiler'
+Plugin 'mindriot101/vim-pytest-runner'
+Plugin 'tpope/vim-dispatch'
+
+" TODO: reenable later
+" Plugin 'SirVer/ultisnips'
+" Plugin 'honza/vim-snippets'
+"
 Plugin 'davidhalter/jedi-vim'
+
+" replaces ag.vim, provides support for :Ack term
+Plugin 'mileszs/ack.vim'
 
 call vundle#end()
 filetype plugin indent on
@@ -145,14 +179,10 @@ set nolist
 
 set wildignore+=*.o,*.obj,.git,node_modules,bower_components
 
-" vim-dispatch
+" vim-dispatch and related test-running configuration
 nnoremap <leader>t :Make %<cr>
-
-" python-mode
-let g:pymode_lint = 0
-let g:pymode_rope = 0
-let g:pymode_indent = 0
-let g:pymode_options_max_line_length = 100
+let g:pytest_command = "Dispatch py.test -n0 {test}"
+nnoremap <Leader>k :call RunNearestTest()<CR>
 
 " Syntastic
 let g:syntastic_python_checkers = ['flake8']
@@ -163,3 +193,10 @@ noremap <C-k>b :NERDTreeToggle<cr>
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<tab>"
 let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
+
+" use ack.vim like ag.vim
+let g:ackprg = 'ag --hidden --vimgrep --smart-case'
+cnoreabbrev ag Ack
+cnoreabbrev aG Ack
+cnoreabbrev Ag Ack
+cnoreabbrev AG Ack
