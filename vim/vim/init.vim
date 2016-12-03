@@ -1,9 +1,13 @@
 set nocompatible
 filetype off
 set shell=/bin/bash
+
+let g:python_host_prog='/usr/bin/python'
+
 set rtp+=~/.config/nvim/bundle/Vundle.vim/
 call vundle#begin('$HOME/.config/nvim/bundle')
 
+" let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
 
 " support for editing .fish scripts
@@ -61,19 +65,31 @@ Plugin 'tpope/vim-unimpaired'
 " Plugin 'vitaly/vim-gitignore'
 " Plugin 'ciaranm/detectindent'
 
-" TODO: reenable later if I can get it to work
+" TODO: work on these
 Plugin '5long/pytest-vim-compiler'
 Plugin 'mindriot101/vim-pytest-runner'
 Plugin 'tpope/vim-dispatch'
+Plugin 'SirVer/ultisnips'
 
 " TODO: reenable later
-" Plugin 'SirVer/ultisnips'
 " Plugin 'honza/vim-snippets'
 "
 Plugin 'davidhalter/jedi-vim'
 
 " replaces ag.vim, provides support for :Ack term
 Plugin 'mileszs/ack.vim'
+
+" swift language support 
+Plugin 'keith/swift.vim'
+
+" typescript syntax
+Plugin 'leafgarland/typescript-vim'
+
+" required for tsuquyomi
+Plugin 'Shougo/vimproc.vim'
+
+" Tsuquyomi works as a client for TSServer
+Plugin 'Quramy/tsuquyomi'
 
 call vundle#end()
 filetype plugin indent on

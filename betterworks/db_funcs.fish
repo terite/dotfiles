@@ -73,3 +73,16 @@ complete --command dropconnections \
     --authoritative \
     --no-files \
     --arguments '(listdb)'
+
+
+function copytestdb
+    set -l from $argv[1]
+    set -l basetarget "test_"$argv[2]
+
+    set -l targets $basetarget $basetarget"_gw0" $basetarget"_gw1" $basetarget"_gw2"
+
+    for target in targets
+        echo dropdb $target
+        echo copydb $from $target
+    end
+end

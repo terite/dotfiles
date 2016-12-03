@@ -61,3 +61,10 @@
 [diff]
     tool = vimdiff
 	algorithm = histogram
+
+[difftool]
+	trustExitCode = true
+[isort]
+	strict = true
+[flake8]
+	strict = true
