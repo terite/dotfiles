@@ -4,7 +4,7 @@ function listdb
         --no-align \
         --tuples-only \
         --command "SELECT datname FROM pg_database WHERE datistemplate=false" \
-    | grep -v "^\\($USER\|postgres\)\$"
+    | grep -v "^\\($USER\|postgres\|Time:.*\)\$"
 end
 
 function whichdb
