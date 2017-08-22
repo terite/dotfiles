@@ -1,7 +1,7 @@
 set DOTFILES (abspath (dirname (status -f))"/../..")
 
 # I really don't need that greeting every time
-set --erase fish_greeting
+set fish_greeting
 
 for file in $DOTFILES/*/*.fish;
     . $file;
