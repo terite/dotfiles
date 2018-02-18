@@ -14,5 +14,3 @@ set -g VIRTUALFISH_COMPAT_ALIASES
 
 # test -e {$HOME}/.iterm2_shell_integration.fish ; and source {$HOME}/.iterm2_shell_integration.fish
 alias imgcat=~/.iterm2/imgcat; alias it2dl=~/.iterm2/it2dl
-
-. $DOTFILES/fish/fish/nvm-wrapper/nvm.fish

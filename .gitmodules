@@ -7,6 +7,3 @@
 [submodule "vim/vim/bundle/Vundle.vim"]
 	path = vim/vim/bundle/Vundle.vim
 	url = https://github.com/VundleVim/Vundle.vim.git
-[submodule "fish/fish/nvm-wrapper"]
-	path = fish/fish/nvm-wrapper
-	url = git://github.com/passcod/nvm-fish-wrapper.git
