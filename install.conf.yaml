@@ -19,6 +19,11 @@
     # node
     ~/.npmrc: node/npmrc
 
+    # pip
+    ~/.pip/pip.conf:
+        create: true
+        path: python/pip.conf
+
     # tmux
     ~/.tmux.conf: tmux/tmux.conf
 
