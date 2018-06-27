@@ -17,9 +17,6 @@ Plugin 'editorconfig/editorconfig-vim'
 " Provides tons of color schemes
 Plugin 'flazz/vim-colorschemes'
 
-" Tabularize, for aligning = and such
-Plugin 'godlygeek/tabular'
-
 " highlights the matching HTML tag when the cursor is positioned on a tag.
 Plugin 'gregsexton/MatchTag'
 
@@ -62,11 +59,6 @@ Plugin 'tpope/vim-unimpaired'
 " TODO: remove if I don't need this
 " Plugin 'vitaly/vim-gitignore'
 " Plugin 'ciaranm/detectindent'
-
-" TODO: work on these
-Plugin '5long/pytest-vim-compiler'
-Plugin 'mindriot101/vim-pytest-runner'
-Plugin 'tpope/vim-dispatch'
 
 Plugin 'davidhalter/jedi-vim'
 
@@ -146,8 +138,6 @@ cab VS vs
 cab Qa qa
 cab QA qa
 
-noremap <space>= :Tabularize /^[^=]*\zs=<cr>
-noremap <space>, :Tabularize /^[^,]*\zs,<cr>
 set colorcolumn=101
 
 " Copy visual selection with :cz
@@ -192,21 +182,11 @@ set nolist
 
 set wildignore+=*.o,*.obj,.git,node_modules,bower_components
 
-" vim-dispatch and related test-running configuration
-nnoremap <leader>t :Make %<cr>
-let g:pytest_command = "Dispatch py.test -n0 {test}"
-nnoremap <Leader>k :call RunNearestTest()<CR>
-
 " Syntastic
 let g:syntastic_python_checkers = ['flake8']
 let g:syntastic_javascript_checkers=['eslint']
 
 noremap <C-k>b :NERDTreeToggle<cr>
-
-" UltiSnips
-let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsJumpForwardTrigger="<tab>"
-let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 
 " use ack.vim like ag.vim
 let g:ackprg = 'ag --hidden --vimgrep --smart-case'
