@@ -16,7 +16,7 @@ Plugin 'dag/vim-fish'
 " Read .editorconfig files and apply settings to vim
 Plugin 'editorconfig/editorconfig-vim'
 
-" provides molokai
+" Provides tons of color schemes
 Plugin 'flazz/vim-colorschemes'
 
 " Tabularize, for aligning = and such
@@ -90,6 +90,9 @@ Plugin 'Shougo/vimproc.vim'
 
 " Tsuquyomi works as a client for TSServer
 Plugin 'Quramy/tsuquyomi'
+
+" syntax highlighting for Vue components.
+Plugin 'posva/vim-vue'
 
 call vundle#end()
 filetype plugin indent on
@@ -178,7 +181,7 @@ nnoremap <s-tab> <C-w><left>
 
 " Color scheme
 set background=dark
-colorscheme molokai
+colorscheme Tomorrow-Night
 highlight ColorColumn ctermbg=8
 
 if &term =~ '256color'
@@ -202,6 +205,7 @@ nnoremap <Leader>k :call RunNearestTest()<CR>
 
 " Syntastic
 let g:syntastic_python_checkers = ['flake8']
+let g:syntastic_javascript_checkers=['eslint']
 
 noremap <C-k>b :NERDTreeToggle<cr>
 
