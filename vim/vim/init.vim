@@ -2,8 +2,6 @@ set nocompatible
 filetype off
 set shell=/bin/bash
 
-let g:python_host_prog='/usr/bin/python'
-
 set rtp+=~/.config/nvim/bundle/Vundle.vim/
 call vundle#begin('$HOME/.config/nvim/bundle')
 
@@ -69,11 +67,7 @@ Plugin 'tpope/vim-unimpaired'
 Plugin '5long/pytest-vim-compiler'
 Plugin 'mindriot101/vim-pytest-runner'
 Plugin 'tpope/vim-dispatch'
-Plugin 'SirVer/ultisnips'
 
-" TODO: reenable later
-" Plugin 'honza/vim-snippets'
-"
 Plugin 'davidhalter/jedi-vim'
 
 " replaces ag.vim, provides support for :Ack term
