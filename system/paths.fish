@@ -29,3 +29,6 @@ _add_path "/opt/local/Library/Frameworks/Python.framework/Versions/2.7/bin"
 
 # macports
 _add_path "/opt/local/bin"
+
+# homebrew
+_add_path "/usr/local/sbin"
