@@ -18,6 +18,9 @@ _add_path "$HOME/bin"
 _add_path "$HOME/local/bin"
 _add_path "/Applications/Postgres.app/Contents/Versions/latest/bin"
 
+# lua
+_add_path "$HOME/.luarocks/bin"
+
 # system python & pip
 # _add_path "$HOME/Library/Python/2.7/bin"
 
