@@ -80,6 +80,9 @@ Plugin 'Quramy/tsuquyomi'
 " syntax highlighting for Vue components.
 Plugin 'posva/vim-vue'
 
+" use <Tab> for completion
+Plugin 'ervandew/supertab'
+
 call vundle#end()
 filetype plugin indent on
 
@@ -194,3 +197,12 @@ cnoreabbrev ag Ack
 cnoreabbrev aG Ack
 cnoreabbrev Ag Ack
 cnoreabbrev AG Ack
+
+" Use tsuquyomi like jedi
+let g:tsuquyomi_completion_detail = 1
+autocmd FileType typescript nmap <buffer> K : <C-u>echo tsuquyomi#hint()<CR>
+autocmd FileType typescript nmap <buffer> <leader>g : <C-u>TsuDefinition<CR>
+autocmd FileType typescript nmap <buffer> <leader>d : <C-u>TsuTypeDefinition<CR>
+
+set omnifunc=syntaxcomplete#Complete
+
