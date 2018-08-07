@@ -203,6 +203,12 @@ let g:tsuquyomi_completion_detail = 1
 autocmd FileType typescript nmap <buffer> K : <C-u>echo tsuquyomi#hint()<CR>
 autocmd FileType typescript nmap <buffer> <leader>g : <C-u>TsuDefinition<CR>
 autocmd FileType typescript nmap <buffer> <leader>d : <C-u>TsuTypeDefinition<CR>
+let g:tsuquyomi_disable_quickfix = 1
+let g:syntastic_typescript_checkers = ['tsuquyomi']
 
-set omnifunc=syntaxcomplete#Complete
+" set omnifunc=syntaxcomplete#Complete
+"
+let g:SuperTabDefaultCompletionType = "<C-X><C-O>"
+
+" autocmd FileType typescript setlocal completeopt+=preview
 
