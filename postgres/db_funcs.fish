@@ -3,7 +3,7 @@ function listdb
     psql \
         --no-align \
         --tuples-only \
-        --command "SELECT datname FROM pg_database WHERE datistemplate=false" \
+        --command "SELECT datname FROM pg_database WHERE datistemplate=false ORDER BY datname" \
     | grep -v "^\\($USER\|postgres\|Time:.*\)\$"
 end
 
