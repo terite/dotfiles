@@ -28,9 +28,6 @@
 [mergetool]
 	keepBackup = false
 
-[help]
-	autocorrect = 1
-
 [color]
 	branch = auto
 	diff = auto
@@ -54,9 +51,6 @@
 	added = green
 	changed = yellow
 	untracked = red
-
-[push]
-	default = current
 
 [diff]
     tool = vimdiff
