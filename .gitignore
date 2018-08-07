@@ -1,6 +1,7 @@
-vim/vim/.netrwhist
-vim/vim/doc/tags
-fish/fish/fish_history
-fish/fish/fishd.*
+/vim/vim/.netrwhist
+/vim/vim/doc/tags
+/fish/fish/fish_history
+/fish/fish/fishd.*
 /sublime/User/Package\ Control.*
 /vim/vim/bundle/*
+/dotbot
