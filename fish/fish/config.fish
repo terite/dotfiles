@@ -1,4 +1,5 @@
-set DOTFILES (abspath (dirname (status -f))"/../..")
+# set DOTFILES (abspath (dirname (status -f))"/../..")
+set DOTFILES "$HOME/code/dotfiles"
 
 # I really don't need that greeting every time
 set fish_greeting
