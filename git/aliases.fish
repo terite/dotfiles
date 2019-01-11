@@ -14,16 +14,16 @@ alias gap="git add -p"
 alias gcm='git checkout master'
 alias gcv='git commit -v'
 alias gg='git grep'
-alias gp='git push'
+alias gp='git push -u'
 
 # git fetch upstream
-alias gfu="git fetch upstream"
+alias gfu="git fetch origin"
 
 # git rebase upstream/master
-alias gru="git rebase (git show-ref --hash upstream/master)"
+alias gru="git rebase (git show-ref --hash origin)"
 
 # git branch --merged upstream/master
-alias merged="git branch --merged upstream/master"
+alias merged="git branch --merged origin"
 
 # get hash for upstream/master
 # git show-ref --hash upstream/master

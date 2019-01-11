@@ -62,3 +62,5 @@
 	strict = true
 [flake8]
 	strict = true
+[push]
+	default = current
