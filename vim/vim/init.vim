@@ -7,8 +7,13 @@ call vundle#begin('$HOME/.config/nvim/bundle')
 
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
+Plugin 'kchmck/vim-coffee-script'
+Plugin 'keith/swift.vim'
+Plugin 'leafgarland/typescript-vim'
+Plugin 'posva/vim-vue'
+Plugin 'martinda/Jenkinsfile-vim-syntax'
 
-" support for editing .fish scripts
+" various language support
 Plugin 'dag/vim-fish'
 
 " Read .editorconfig files and apply settings to vim
@@ -28,9 +33,6 @@ Plugin 'henrik/vim-indexed-search'
 
 " relative line numbers in normal mode, absolute in insert mode
 Plugin 'jeffkreeftmeijer/vim-numbertoggle'
-
-" support for editing .coffee files
-Plugin 'kchmck/vim-coffee-script'
 
 " shows syntax/style errors for files while editing
 Plugin 'scrooloose/syntastic'
@@ -65,20 +67,11 @@ Plugin 'davidhalter/jedi-vim'
 " replaces ag.vim, provides support for :Ack term
 Plugin 'mileszs/ack.vim'
 
-" swift language support 
-Plugin 'keith/swift.vim'
-
-" typescript syntax
-Plugin 'leafgarland/typescript-vim'
-
 " required for tsuquyomi
 Plugin 'Shougo/vimproc.vim'
 
 " Tsuquyomi works as a client for TSServer
 Plugin 'Quramy/tsuquyomi'
-
-" syntax highlighting for Vue components.
-Plugin 'posva/vim-vue'
 
 " use <Tab> for completion
 Plugin 'ervandew/supertab'
@@ -87,7 +80,8 @@ call vundle#end()
 filetype plugin indent on
 
 " fzf https://github.com/junegunn/fzf
-set rtp+=~/.fzf
+set rtp+=/usr/local/opt/fzf
+
 noremap <c-p> :FZF<cr>
 
 set number
@@ -212,3 +206,6 @@ let g:SuperTabDefaultCompletionType = "<C-X><C-O>"
 
 " autocmd FileType typescript setlocal completeopt+=preview
 
+
+" press f11 to fix syntax
+noremap <F11> <C-o>:syntax sync fromstart<CR>
