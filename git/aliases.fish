@@ -25,15 +25,13 @@ alias gru="git rebase (git show-ref --hash origin)"
 # git branch --merged upstream/master
 alias merged="git branch --merged origin"
 
-# get hash for upstream/master
-# git show-ref --hash upstream/master
-
 function gco
   command git checkout $argv;
 end
 
 function __fish_git_local_branches
-  command git branch --no-color ^/dev/null | sgrep -v ' -> ' | sed -e 's/^..//'
+    command git for-each-ref --format='%(refname)' refs/heads/ refs/remotes/ 2>/dev/null \
+        | string replace -rf '^refs/heads/(.*)$' '$1\tLocal Branch'
 end
 
 complete --command gco --no-files --authoritative --arguments '(__fish_git_local_branches)'

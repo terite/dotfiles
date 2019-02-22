@@ -9,6 +9,6 @@ if [[ -z $1 ]]; then
 fi
 
 # avoid tracking this branch
-UPSTREAM_HASH=$(git show-ref --hash upstream/master)
+UPSTREAM_HASH=$(git show-ref --hash origin/master)
 
 git checkout -b $1 $UPSTREAM_HASH

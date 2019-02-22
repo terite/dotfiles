@@ -18,6 +18,7 @@
 	snapshot = !git stash save "snapshot: $(date)" && git stash apply "stash@{0}"
 	ours   = "!f() { git checkout --ours $@ && git add $@; }; f"
 	theirs = "!f() { git checkout --theirs $@ && git add $@; }; f"
+	pushf = push --force-with-lease
 
 [core]
 	excludesfile = ~/.gitignore

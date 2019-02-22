@@ -7,4 +7,4 @@ if [[ ! $1 =~ ^[0-9]+$ ]]; then
     exit 1
 fi
 
-git fetch upstream refs/pull/$1/head && git checkout FETCH_HEAD
+git fetch origin refs/pull/$1/head && git checkout FETCH_HEAD
