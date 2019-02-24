@@ -7,14 +7,18 @@ call vundle#begin('$HOME/.config/nvim/bundle')
 
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
-Plugin 'kchmck/vim-coffee-script'
-Plugin 'keith/swift.vim'
-Plugin 'leafgarland/typescript-vim'
-Plugin 'posva/vim-vue'
-Plugin 'martinda/Jenkinsfile-vim-syntax'
 
 " various language support
+Plugin 'HerringtonDarkholme/yats.vim'
+Plugin 'kchmck/vim-coffee-script'
+Plugin 'keith/swift.vim'
+Plugin 'martinda/Jenkinsfile-vim-syntax'
+Plugin 'posva/vim-vue'
 Plugin 'dag/vim-fish'
+Plugin 'groenewege/vim-less'
+
+" Like syntastic but faster?
+Plugin 'w0rp/ale.git'
 
 " Read .editorconfig files and apply settings to vim
 Plugin 'editorconfig/editorconfig-vim'
@@ -25,9 +29,6 @@ Plugin 'flazz/vim-colorschemes'
 " highlights the matching HTML tag when the cursor is positioned on a tag.
 Plugin 'gregsexton/MatchTag'
 
-" syntax highlighting, indenting and autocompletion for .less stylesheets
-Plugin 'groenewege/vim-less'
-
 " when searching prints 'At match #N out of M matches'.
 Plugin 'henrik/vim-indexed-search'
 
@@ -35,7 +36,7 @@ Plugin 'henrik/vim-indexed-search'
 Plugin 'jeffkreeftmeijer/vim-numbertoggle'
 
 " shows syntax/style errors for files while editing
-Plugin 'scrooloose/syntastic'
+" Plugin 'scrooloose/syntastic'
 
 " file browser sidebar
 Plugin 'scrooloose/nerdtree'
@@ -67,11 +68,8 @@ Plugin 'davidhalter/jedi-vim'
 " replaces ag.vim, provides support for :Ack term
 Plugin 'mileszs/ack.vim'
 
-" required for tsuquyomi
-Plugin 'Shougo/vimproc.vim'
-
 " Tsuquyomi works as a client for TSServer
-Plugin 'Quramy/tsuquyomi'
+" Plugin 'Quramy/tsuquyomi'
 
 " use <Tab> for completion
 Plugin 'ervandew/supertab'
@@ -135,7 +133,7 @@ cab VS vs
 cab Qa qa
 cab QA qa
 
-set colorcolumn=101
+" set colorcolumn=101
 
 " Copy visual selection with :cz
 command -range Cz :silent :<line1>,<line2>w !xsel -i -b
@@ -154,7 +152,7 @@ cabbrev px Px
 cabbrev pv Pv
 
 " use \p to toggle paste node
-set pastetoggle=<leader>p
+" set pastetoggle=<leader>p
 
 " Use tab to navigate splits.
 nnoremap <tab> <C-w><C-w>
@@ -191,21 +189,20 @@ cnoreabbrev ag Ack
 cnoreabbrev aG Ack
 cnoreabbrev Ag Ack
 cnoreabbrev AG Ack
+let g:ale_set_loclist = 0
+let g:ale_set_quickfix = 1
 
-" Use tsuquyomi like jedi
-let g:tsuquyomi_completion_detail = 1
-autocmd FileType typescript nmap <buffer> K : <C-u>echo tsuquyomi#hint()<CR>
-autocmd FileType typescript nmap <buffer> <leader>g : <C-u>TsuDefinition<CR>
-autocmd FileType typescript nmap <buffer> <leader>d : <C-u>TsuTypeDefinition<CR>
-let g:tsuquyomi_disable_quickfix = 1
-let g:syntastic_typescript_checkers = ['tsuquyomi']
+" Ale
+nmap <leader>g :ALEGoToDefinition<CR>
+nmap <leader>t :ALEGoToTypeDefinition<CR>
+nmap <leader>h :ALEHover<CR>
+nmap <leader>r :ALEFindReferences<CR>
 
 " set omnifunc=syntaxcomplete#Complete
 "
 let g:SuperTabDefaultCompletionType = "<C-X><C-O>"
 
 " autocmd FileType typescript setlocal completeopt+=preview
-
 
 " press f11 to fix syntax
 noremap <F11> <C-o>:syntax sync fromstart<CR>
