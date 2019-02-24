@@ -1,4 +1,3 @@
-alias sniff "phpcs --standard=PSR2"
 alias ll "ls -aFhlG"
 
 function lock

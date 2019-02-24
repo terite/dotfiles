@@ -1,15 +1,17 @@
-# set DOTFILES (abspath (dirname (status -f))"/../..")
-set DOTFILES "$HOME/code/dotfiles"
+set DOTFILES ""
+begin;
+    # path to this file
+    set -l configpath (dirname (realpath (status --current-filename)))
+
+    # up 2 directories to get to the root
+    set -l dotfilespath "$configpath/../../"
+    set DOTFILES (abspath $dotfilespath)
+end;
+
+for file in $DOTFILES/*/*.fish;
+    source $file;
+end
 
 # I really don't need that greeting every time
 set fish_greeting
 
-for file in $DOTFILES/*/*.fish;
-    . $file;
-end
-
-# test -e {$HOME}/.iterm2_shell_integration.fish ; and source {$HOME}/.iterm2_shell_integration.fish
-alias imgcat=~/.iterm2/imgcat; alias it2dl=~/.iterm2/it2dl
-
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/des/google-cloud-sdk/path.fish.inc' ]; . '/Users/des/google-cloud-sdk/path.fish.inc'; end
