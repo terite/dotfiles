@@ -18,6 +18,13 @@ Plugin 'dag/vim-fish'
 Plugin 'groenewege/vim-less'
 
 " Like syntastic but faster?
+let g:ale_completion_enabled = 1
+" let g:ale_set_loclist = 0
+" let g:ale_set_quickfix = 1
+nmap <leader>g :ALEGoToDefinition<CR>
+nmap <leader>t :ALEGoToTypeDefinition<CR>
+nmap <leader>h :ALEHover<CR>
+nmap <leader>r :ALEFindReferences<CR>
 Plugin 'w0rp/ale.git'
 
 " Read .editorconfig files and apply settings to vim
@@ -72,13 +79,15 @@ Plugin 'mileszs/ack.vim'
 " Plugin 'Quramy/tsuquyomi'
 
 " use <Tab> for completion
-Plugin 'ervandew/supertab'
+" Plugin 'ervandew/supertab'
+
 
 call vundle#end()
 filetype plugin indent on
 
 " fzf https://github.com/junegunn/fzf
-set rtp+=/usr/local/opt/fzf
+" set rtp+=/usr/local/opt/fzf
+set rtp+=~/.fzf
 
 noremap <c-p> :FZF<cr>
 
@@ -189,20 +198,11 @@ cnoreabbrev ag Ack
 cnoreabbrev aG Ack
 cnoreabbrev Ag Ack
 cnoreabbrev AG Ack
-let g:ale_set_loclist = 0
-let g:ale_set_quickfix = 1
 
-" Ale
-nmap <leader>g :ALEGoToDefinition<CR>
-nmap <leader>t :ALEGoToTypeDefinition<CR>
-nmap <leader>h :ALEHover<CR>
-nmap <leader>r :ALEFindReferences<CR>
 
 " set omnifunc=syntaxcomplete#Complete
 "
-let g:SuperTabDefaultCompletionType = "<C-X><C-O>"
-
-" autocmd FileType typescript setlocal completeopt+=preview
+" let g:SuperTabDefaultCompletionType = "<C-X><C-O>"
 
 " press f11 to fix syntax
 noremap <F11> <C-o>:syntax sync fromstart<CR>
