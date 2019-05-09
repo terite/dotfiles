@@ -2,6 +2,9 @@ set nocompatible
 filetype off
 set shell=/bin/bash
 
+let g:loaded_python_provider = 1
+let g:python3_host_prog = '$HOME/local/venv-vim/bin/python'
+
 set rtp+=~/.config/nvim/bundle/Vundle.vim/
 call vundle#begin('$HOME/.config/nvim/bundle')
 
@@ -19,8 +22,6 @@ Plugin 'groenewege/vim-less'
 
 " Like syntastic but faster?
 let g:ale_completion_enabled = 1
-" let g:ale_set_loclist = 0
-" let g:ale_set_quickfix = 1
 nmap <leader>g :ALEGoToDefinition<CR>
 nmap <leader>t :ALEGoToTypeDefinition<CR>
 nmap <leader>h :ALEHover<CR>
@@ -41,9 +42,6 @@ Plugin 'henrik/vim-indexed-search'
 
 " relative line numbers in normal mode, absolute in insert mode
 Plugin 'jeffkreeftmeijer/vim-numbertoggle'
-
-" shows syntax/style errors for files while editing
-" Plugin 'scrooloose/syntastic'
 
 " file browser sidebar
 Plugin 'scrooloose/nerdtree'
@@ -66,21 +64,20 @@ Plugin 'tpope/vim-surround'
 " helpers like ]q for :cnext and [q for :cprevious
 Plugin 'tpope/vim-unimpaired'
 
-" TODO: remove if I don't need this
-" Plugin 'vitaly/vim-gitignore'
-" Plugin 'ciaranm/detectindent'
-
-Plugin 'davidhalter/jedi-vim'
+" let g:jedi#goto_command = ""
+" let g:jedi#goto_assignments_command = ""
+" let g:jedi#goto_definitions_command = ""
+" let g:jedi#documentation_command = ""
+" let g:jedi#usages_command = ""
+" let g:jedi#completions_command = ""
+" let g:jedi#rename_command = ""
+" Plugin 'davidhalter/jedi-vim'
 
 " replaces ag.vim, provides support for :Ack term
 Plugin 'mileszs/ack.vim'
 
-" Tsuquyomi works as a client for TSServer
-" Plugin 'Quramy/tsuquyomi'
-
 " use <Tab> for completion
 " Plugin 'ervandew/supertab'
-
 
 call vundle#end()
 filetype plugin indent on
@@ -160,9 +157,6 @@ cabbrev pz Pz
 cabbrev px Px
 cabbrev pv Pv
 
-" use \p to toggle paste node
-" set pastetoggle=<leader>p
-
 " Use tab to navigate splits.
 nnoremap <tab> <C-w><C-w>
 nnoremap <s-tab> <C-w><left>
@@ -186,10 +180,6 @@ set nolist
 
 set wildignore+=*.o,*.obj,.git,node_modules,bower_components
 
-" Syntastic
-let g:syntastic_python_checkers = ['flake8']
-let g:syntastic_javascript_checkers=['eslint']
-
 noremap <C-k>b :NERDTreeToggle<cr>
 
 " use ack.vim like ag.vim
@@ -198,11 +188,6 @@ cnoreabbrev ag Ack
 cnoreabbrev aG Ack
 cnoreabbrev Ag Ack
 cnoreabbrev AG Ack
-
-
-" set omnifunc=syntaxcomplete#Complete
-"
-" let g:SuperTabDefaultCompletionType = "<C-X><C-O>"
 
 " press f11 to fix syntax
 noremap <F11> <C-o>:syntax sync fromstart<CR>
