@@ -19,7 +19,9 @@ function fish_prompt --description 'Write out the prompt'
 		echo -n -s (set_color white) "$USER@" (hostname) (set_color normal) " "
 	end
 
-	if set -q VIRTUAL_ENV
+    if set -q _OLD_FISH_PROMPT_OVERRIDE
+        # virtualenv added itself to the prompt, dont re-add it
+    else if set -q VIRTUAL_ENV
 		echo -n -s (set_color purple) "(" (basename "$VIRTUAL_ENV") ")" (set_color normal) " "
 
         # I only care about the DB when I'm in a virtual env
