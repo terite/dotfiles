@@ -20,6 +20,16 @@ Plugin 'posva/vim-vue'
 Plugin 'dag/vim-fish'
 Plugin 'groenewege/vim-less'
 
+" bottom status bar
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#ale#enabled = 1
+Plugin 'vim-airline/vim-airline'
+
+" async completion
+" let g:deoplete#enable_at_startup = 1
+" let g:deoplete#sources = {'_': ['ale']}
+" Plugin 'Shougo/deoplete.nvim'
+
 " Like syntastic but faster?
 let g:ale_completion_enabled = 1
 nmap <leader>g :ALEGoToDefinition<CR>
