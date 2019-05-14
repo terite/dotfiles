@@ -83,7 +83,7 @@ call vundle#end()
 filetype plugin indent on
 
 " fzf https://github.com/junegunn/fzf
-" set rtp+=/usr/local/opt/fzf
+set rtp+=/usr/local/opt/fzf
 set rtp+=~/.fzf
 
 noremap <c-p> :FZF<cr>
