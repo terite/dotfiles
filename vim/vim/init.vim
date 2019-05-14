@@ -2,8 +2,8 @@ set nocompatible
 filetype off
 set shell=/bin/bash
 
-let g:loaded_python_provider = 1
-let g:python3_host_prog = '$HOME/local/venv-vim/bin/python'
+let g:python_host_prog = expand('~/local/venv2.7-vim/bin/python')
+let g:python3_host_prog = expand('~/local/venv3.6-vim/bin/python')
 
 set rtp+=~/.config/nvim/bundle/Vundle.vim/
 call vundle#begin('$HOME/.config/nvim/bundle')
