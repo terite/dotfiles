@@ -1,4 +1,6 @@
 set nocompatible
+set nomodeline
+
 filetype off
 set shell=/bin/bash
 
