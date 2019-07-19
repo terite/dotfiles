@@ -21,6 +21,10 @@ Plugin 'martinda/Jenkinsfile-vim-syntax'
 Plugin 'posva/vim-vue'
 Plugin 'dag/vim-fish'
 Plugin 'groenewege/vim-less'
+Plugin 'ElmCast/elm-vim'
+
+" compensates for ALE not working for me for python
+Plugin 'davidhalter/jedi-vim'
 
 " bottom status bar
 let g:airline#extensions#tabline#enabled = 1
@@ -34,14 +38,23 @@ Plugin 'vim-airline/vim-airline'
 
 " Like syntastic but faster?
 let g:ale_completion_enabled = 1
+let g:ale_fix_on_save = 1
+let g:ale_fixers = {
+\    'typescript': ['prettier'],
+\}
 nmap <leader>g :ALEGoToDefinition<CR>
 nmap <leader>t :ALEGoToTypeDefinition<CR>
 nmap <leader>h :ALEHover<CR>
 nmap <leader>r :ALEFindReferences<CR>
+nmap <silent> <C-k> <Plug>(ale_previous_wrap)
+nmap <silent> <C-j> <Plug>(ale_next_wrap)
 Plugin 'w0rp/ale.git'
 
 " Read .editorconfig files and apply settings to vim
 Plugin 'editorconfig/editorconfig-vim'
+
+" Allow using :BD to delete a buffer but keep the window open
+Plugin 'qpkorr/vim-bufkill'
 
 " Provides tons of color schemes
 Plugin 'flazz/vim-colorschemes'
@@ -175,15 +188,18 @@ nnoremap <s-tab> <C-w><left>
 
 " Color scheme
 set background=dark
-colorscheme Tomorrow-Night
-highlight ColorColumn ctermbg=8
+set termguicolors
+" colorscheme Tomorrow-Night
+" colorscheme solarized8_dark_high
+colorscheme brogrammer
+" highlight ColorColumn ctermbg=8
 
-if &term =~ '256color'
-  " disable Background Color Erase (BCE) so that color schemes
-  " render properly when inside 256-color tmux and GNU screen.
-  " see also http://snk.tuxfamily.org/log/vim-256color-bce.html
-  set t_ut=
-endif
+" if &term =~ '256color'
+"   " disable Background Color Erase (BCE) so that color schemes
+"   " render properly when inside 256-color tmux and GNU screen.
+"   " see also http://snk.tuxfamily.org/log/vim-256color-bce.html
+"   set t_ut=
+" endif
 
 " Show whitespace (default off for now, too distracting)
 set listchars=eol:¬,tab:▸\ ,trail:~,extends:>,precedes:<
