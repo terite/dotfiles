@@ -1,1 +1,3 @@
-set -x EDITOR "vim"
+set -x EDITOR "nvim"
+
+alias vim nvim
