@@ -1,6 +1,5 @@
 - clean: ['~']
 - link:
-
     # ag
     ~/.agignore: ag/agignore
 
@@ -10,11 +9,12 @@
         force: true
         path: fish/fish/
 
+    # fzf
+    ~/.fzf: fzf/fzf/
+
     # git
     ~/.gitconfig: git/gitconfig
     ~/.gitignore: git/gitignore
-
-    ~/.hushlogin: system/hushlogin
 
     # node
     ~/.npmrc: node/npmrc
@@ -24,15 +24,17 @@
         create: true
         path: python/pip.conf
 
+    # system
+    ~/.hushlogin: system/hushlogin
+
     # tmux
     ~/.tmux.conf: tmux/tmux.conf
 
-    # neovim
+    # vim & neovim
     ~/.config/nvim: vim/vim/
-
-    # support vim too
     ~/.vim: vim/vim/
     ~/.vimrc: vim/vim/init.vim
 
 - shell:
+    - [./fzf/fzf/install --bin, Install FZF]
     - [vim +PluginInstall +qall, Install Vundle plugins]

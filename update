@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+set -euxo pipefail
+
+git submodule update
+vim +PluginUpdate +qall
