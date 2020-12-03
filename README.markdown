@@ -1,5 +1,5 @@
 # terite's dotfiles
-These are my dotfiles. There are many like them, but these are mine own.
+These are my dotfiles. There are many like them, but these are mine.
 
 These are dotfiles for:
 
