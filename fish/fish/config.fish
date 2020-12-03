@@ -28,3 +28,6 @@ end
 
 # I really don't need that greeting every time
 set fish_greeting
+
+# set -x CC /usr/bin/clang-10
+# set -x CXX /usr/bin/clang++-10

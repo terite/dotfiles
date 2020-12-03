@@ -4,7 +4,7 @@ set nomodeline
 filetype off
 set shell=/bin/bash
 
-let g:python_host_prog = expand('~/local/venv2.7-vim/bin/python')
+" let g:python_host_prog = expand('~/local/venv2.7-vim/bin/python')
 let g:python3_host_prog = expand('~/local/venv3.6-vim/bin/python')
 
 set rtp+=~/.config/nvim/bundle/Vundle.vim/
@@ -14,6 +14,7 @@ call vundle#begin('$HOME/.config/nvim/bundle')
 Plugin 'VundleVim/Vundle.vim'
 
 " various language support
+Plugin 'pangloss/vim-javascript'
 Plugin 'HerringtonDarkholme/yats.vim'
 Plugin 'kchmck/vim-coffee-script'
 Plugin 'keith/swift.vim'
@@ -23,24 +24,13 @@ Plugin 'dag/vim-fish'
 Plugin 'groenewege/vim-less'
 Plugin 'ElmCast/elm-vim'
 
-" compensates for ALE not working for me for python
-Plugin 'davidhalter/jedi-vim'
-
-" bottom status bar
-let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#ale#enabled = 1
-Plugin 'vim-airline/vim-airline'
-
-" async completion
-" let g:deoplete#enable_at_startup = 1
-" let g:deoplete#sources = {'_': ['ale']}
-" Plugin 'Shougo/deoplete.nvim'
-
 " Like syntastic but faster?
 let g:ale_completion_enabled = 1
 let g:ale_fix_on_save = 1
 let g:ale_fixers = {
-\    'typescript': ['prettier'],
+\    'typescript': ['prettier', 'eslint'],
+\    'typescriptreact': ['prettier', 'eslint'],
+\    'css': ['prettier'],
 \}
 nmap <leader>g :ALEGoToDefinition<CR>
 nmap <leader>t :ALEGoToTypeDefinition<CR>
@@ -48,9 +38,14 @@ nmap <leader>h :ALEHover<CR>
 nmap <leader>r :ALEFindReferences<CR>
 nmap <silent> <C-k> <Plug>(ale_previous_wrap)
 nmap <silent> <C-j> <Plug>(ale_next_wrap)
+
+" https://github.com/dense-analysis/ale/issues/1700
+set completeopt+=noinsert
 Plugin 'w0rp/ale.git'
 
 " Read .editorconfig files and apply settings to vim
+let g:EditorConfig_exclude_patterns = ['fugitive://.*']
+" let g:EditorConfig_verbose = 1
 Plugin 'editorconfig/editorconfig-vim'
 
 " Allow using :BD to delete a buffer but keep the window open
@@ -68,8 +63,7 @@ Plugin 'henrik/vim-indexed-search'
 " relative line numbers in normal mode, absolute in insert mode
 Plugin 'jeffkreeftmeijer/vim-numbertoggle'
 
-" file browser sidebar
-Plugin 'scrooloose/nerdtree'
+" Plugin 'strager/quick-lint-js', {'rtp': 'plugin/vim/quick-lint-js.vim'}
 
 " provides a motion for commenting out lines of code
 Plugin 'tpope/vim-commentary'
@@ -96,9 +90,14 @@ Plugin 'tpope/vim-unimpaired'
 " let g:jedi#usages_command = ""
 " let g:jedi#completions_command = ""
 " let g:jedi#rename_command = ""
-" Plugin 'davidhalter/jedi-vim'
+"Plugin 'davidhalter/jedi-vim'
 
 " replaces ag.vim, provides support for :Ack term
+let g:ackprg = 'ag --hidden --vimgrep --smart-case'
+cnoreabbrev ag Ack
+cnoreabbrev aG Ack
+cnoreabbrev Ag Ack
+cnoreabbrev AG Ack
 Plugin 'mileszs/ack.vim'
 
 " use <Tab> for completion
@@ -131,8 +130,8 @@ set autoread "reload files changed outside of vim
 
 " Indentation
 set smarttab
-set softtabstop=4
-set shiftwidth=4
+set softtabstop=2
+set shiftwidth=2
 set tabstop=4
 set expandtab
 
@@ -186,36 +185,28 @@ cabbrev pv Pv
 nnoremap <tab> <C-w><C-w>
 nnoremap <s-tab> <C-w><left>
 
+map <unique> <F1> <ESC>:make<CR>
+" set makeprg=make\ -j4\ -w
+
+nmap <unique> <Leader>s vip:sort u<CR>
+vmap <unique> <Leader>s :sort u<CR>
+nmap <unique> <Leader>S vip:sort iu<CR>
+vmap <unique> <Leader>S :sort iu<CR>
+
 " Color scheme
 set background=dark
 set termguicolors
-" colorscheme Tomorrow-Night
+colorscheme Tomorrow-Night-Eighties
 " colorscheme solarized8_dark_high
-colorscheme brogrammer
+" colorscheme brogrammer
 " highlight ColorColumn ctermbg=8
 
-" if &term =~ '256color'
-"   " disable Background Color Erase (BCE) so that color schemes
-"   " render properly when inside 256-color tmux and GNU screen.
-"   " see also http://snk.tuxfamily.org/log/vim-256color-bce.html
-"   set t_ut=
-" endif
-
 " Show whitespace (default off for now, too distracting)
-set listchars=eol:¬,tab:▸\ ,trail:~,extends:>,precedes:<
+set listchars=eol:¬,tab:▸\ ,trail:~,extends:>,precedes:<,space:·
 nmap <leader>l :set list!<CR>
 set nolist
 
 set wildignore+=*.o,*.obj,.git,node_modules,bower_components
-
-noremap <C-k>b :NERDTreeToggle<cr>
-
-" use ack.vim like ag.vim
-let g:ackprg = 'ag --hidden --vimgrep --smart-case'
-cnoreabbrev ag Ack
-cnoreabbrev aG Ack
-cnoreabbrev Ag Ack
-cnoreabbrev AG Ack
 
 " press f11 to fix syntax
 noremap <F11> <C-o>:syntax sync fromstart<CR>
