@@ -37,4 +37,4 @@
 
 - shell:
     - [./fzf/fzf/install --bin, Install FZF]
-    - [vim +PluginInstall +qall, Install Vundle plugins]
+    - [nvim +PluginInstall +qall, Install Vundle plugins]

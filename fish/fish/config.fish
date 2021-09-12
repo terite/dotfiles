@@ -22,6 +22,10 @@ function _add_path
 
 end
 
+function _has_command
+  which $argv[1] > /dev/null
+end
+
 for file in $DOTFILES/*/*.fish;
     source $file;
 end
