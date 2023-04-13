@@ -5,7 +5,7 @@ filetype off
 set shell=/bin/bash
 
 " let g:python_host_prog = expand('~/local/venv2.7-vim/bin/python')
-let g:python3_host_prog = expand('~/local/venv3.6-vim/bin/python')
+" let g:python3_host_prog = expand('~/local/venv3.6-vim/bin/python')
 
 set rtp+=~/.config/nvim/bundle/Vundle.vim/
 call vundle#begin('$HOME/.config/nvim/bundle')
@@ -102,6 +102,7 @@ cnoreabbrev ag Ack
 cnoreabbrev aG Ack
 cnoreabbrev Ag Ack
 cnoreabbrev AG Ack
+cnoreabbrev rg Ack
 Plugin 'mileszs/ack.vim'
 
 " use <Tab> for completion

@@ -5,4 +5,10 @@ end
 complete --command vv \
     --authoritative \
     --no-files \
-    --arguments '(cd $HOME/vivaa; __fish_complete_directories)'
+    --arguments '(__terite_complete_vv)'
+
+function __terite_complete_vv
+  pushd $HOME/vivaa;
+  __fish_complete_directories;
+  popd
+end
