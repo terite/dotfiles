@@ -1,10 +1,3 @@
-# Use `hub` as our git wrapper:
-#   http://defunkt.github.com/hub/
-
-if set --local hub_path (which hub)
-  alias git=$hub_path
-end
-
 alias s='git status -sb'
 alias d='git diff'
 
