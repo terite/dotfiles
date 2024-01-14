@@ -1,8 +1,7 @@
 - clean: ['~']
 - link:
-    # ag
-    ~/.agignore: ag/agignore
-
+    # ag / rg
+    ~/.ignore: .ignore
     # fish
     ~/.config/fish:
         create: true
