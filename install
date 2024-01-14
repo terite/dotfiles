@@ -7,5 +7,4 @@ git submodule update --init --recursive
 
 ./dotbot/bin/dotbot \
     --base-directory "$(pwd)" \
-    --config-file "install.conf.yaml" \
-    "${@}"
+    --config-file "install.conf.yaml"
