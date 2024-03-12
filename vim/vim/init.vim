@@ -152,12 +152,6 @@ set foldmethod=indent
 " set nofoldenable
 set foldlevelstart=20
 
-" disable arrow keys
-map <up> <nop>
-map <down> <nop>
-map <left> <nop>
-map <right> <nop>
-
 " Give up and admit that I hold shift for too long
 cab Wq wq
 cab W w
