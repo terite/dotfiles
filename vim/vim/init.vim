@@ -1,11 +1,11 @@
-set nocompatible
+" Do not allow files to override settings
 set nomodeline
 
-filetype off
+" Some plugins do not play nicely with fish / other shells
 set shell=/bin/bash
 
-" let g:python_host_prog = expand('~/local/venv2.7-vim/bin/python')
-" let g:python3_host_prog = expand('~/local/venv3.6-vim/bin/python')
+" required by Vundle
+filetype off
 
 set rtp+=~/.config/nvim/bundle/Vundle.vim/
 call vundle#begin('$HOME/.config/nvim/bundle')
@@ -89,15 +89,6 @@ Plugin 'tpope/vim-surround'
 " helpers like ]q for :cnext and [q for :cprevious
 Plugin 'tpope/vim-unimpaired'
 
-" let g:jedi#goto_command = ""
-" let g:jedi#goto_assignments_command = ""
-" let g:jedi#goto_definitions_command = ""
-" let g:jedi#documentation_command = ""
-" let g:jedi#usages_command = ""
-" let g:jedi#completions_command = ""
-" let g:jedi#rename_command = ""
-"Plugin 'davidhalter/jedi-vim'
-
 " replaces ag.vim, provides support for :Ack term
 let g:ackprg = 'rg --hidden --vimgrep --smart-case'
 cnoreabbrev ag Ack
@@ -106,9 +97,6 @@ cnoreabbrev Ag Ack
 cnoreabbrev AG Ack
 cnoreabbrev rg Ack
 Plugin 'mileszs/ack.vim'
-
-" use <Tab> for completion
-" Plugin 'ervandew/supertab'
 
 call vundle#end()
 filetype plugin indent on
@@ -186,9 +174,6 @@ cabbrev pv Pv
 nnoremap <tab> <C-w><C-w>
 nnoremap <s-tab> <C-w><left>
 
-map <unique> <F1> <ESC>:make<CR>
-" set makeprg=make\ -j4\ -w
-
 nmap <unique> <Leader>s vip:sort u<CR>
 vmap <unique> <Leader>s :sort u<CR>
 nmap <unique> <Leader>S vip:sort iu<CR>
@@ -197,7 +182,8 @@ vmap <unique> <Leader>S :sort iu<CR>
 " Color scheme
 set background=dark
 set termguicolors
-colorscheme Tomorrow-Night-Eighties
+colorscheme luna
+" colorscheme Tomorrow-Night-Eighties
 " colorscheme solarized8_dark_high
 " colorscheme brogrammer
 " highlight ColorColumn ctermbg=8
@@ -206,11 +192,6 @@ colorscheme Tomorrow-Night-Eighties
 set listchars=eol:¬,tab:▸\ ,trail:~,extends:>,precedes:<,space:·
 nmap <leader>l :set list!<CR>
 set nolist
-
-set wildignore+=*.o,*.obj,.git,node_modules,bower_components
-
-" press f11 to fix syntax
-noremap <F11> <C-o>:syntax sync fromstart<CR>
 
 augroup omnisharp_commands
   autocmd!
