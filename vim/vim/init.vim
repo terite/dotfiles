@@ -10,6 +10,8 @@ set shell=/bin/bash
 set rtp+=~/.config/nvim/bundle/Vundle.vim/
 call vundle#begin('$HOME/.config/nvim/bundle')
 
+Plugin 'github/copilot.vim'
+
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
 
