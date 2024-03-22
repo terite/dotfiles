@@ -29,10 +29,10 @@
     # tmux
     ~/.tmux.conf: tmux/tmux.conf
 
-    # vim & neovim
+    # neovim
     ~/.config/nvim: vim/vim/
-    ~/.vim: vim/vim/
-    ~/.vimrc: vim/vim/init.vim
+    # ~/.vim: vim/vim/
+    # ~/.vimrc: vim/vim/init.vim
 
 - shell:
     - [./fzf/fzf/install --bin, Install FZF]
