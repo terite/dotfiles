@@ -46,6 +46,7 @@ require('lazy').setup(
     -- maybe at set rtp+=/usr/local/opt/fzf
     {
       dir = "~/.fzf",
+      enabled = false,
       build = function()
         vim.cmd[[call fzf#install()]]
       end,
