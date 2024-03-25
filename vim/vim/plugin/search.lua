@@ -15,7 +15,6 @@ vim.api.nvim_create_user_command('Ack', function(opts)
   if term == nil or term == "" then
     term = vim.fn.expand("<cword>")
   end
-  print(vim.inspect(term))
 
   vim.cmd('silent grep! ' .. term)
   vim.cmd.copen()
