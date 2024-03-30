@@ -37,5 +37,8 @@ return {
       vim.opt.foldenable = false
       vim.opt.foldlevel = 99
     end
+  },
+  {
+    "nvim-treesitter/nvim-treesitter-context"
   }
 }
