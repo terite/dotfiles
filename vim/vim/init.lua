@@ -38,28 +38,11 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
-require('lazy').setup(
-  {
-    { import = "plugins" },
-
-    -- fzf https://github.com/junegunn/fzf
-    -- maybe at set rtp+=/usr/local/opt/fzf
-    {
-      dir = "~/.fzf",
-      enabled = false,
-      build = function()
-        vim.cmd[[call fzf#install()]]
-      end,
-      config = function()
-        vim.keymap.set("n", "<c-p>", ":FZF<cr>")
-      end
-    },
-  }, {
-    change_detection = {
-      enabled = false,
-    },
-  }
-)
+require('lazy').setup("plugins", {
+  change_detection = {
+    enabled = false,
+  },
+})
 
 -- No swap files
 vim.opt.swapfile = false
