@@ -8,7 +8,7 @@ return {
   },
 
   -- using :BD to delete a buffer but keep the window open
-  "qpkorr/vim-bufkill",
+  -- "qpkorr/vim-bufkill",
 
   -- highlights the matching HTML tag when the cursor is positioned on a tag.
   "gregsexton/MatchTag",
@@ -48,5 +48,5 @@ return {
   },
 
   -- Run :Copilot setup on new devices to get this working
-  -- "github/copilot.vim",
+  "github/copilot.vim",
 }
