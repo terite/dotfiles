@@ -1,6 +1,8 @@
 return {
   {
     "hrsh7th/nvim-cmp",
+    -- event = "InsertEnter",
+    lazy = false,
     dependencies = {
       "neovim/nvim-lspconfig",
       "hrsh7th/cmp-nvim-lsp",
@@ -49,4 +51,11 @@ return {
   --     require("copilot_cmp").setup()
   --   end
   -- }
+
+  -- Run :Copilot setup on new devices to get this working
+  {
+    "github/copilot.vim",
+    event = "InsertEnter",
+    lazy = false,
+  }
 }

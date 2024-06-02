@@ -1,6 +1,7 @@
 return {
   {
     "nvim-treesitter/nvim-treesitter",
+    lazy = false,
     build = function()
       vim.cmd("TSUpdate")
     end,
@@ -39,6 +40,9 @@ return {
     end
   },
   {
-    "nvim-treesitter/nvim-treesitter-context"
+    {
+      "nvim-treesitter/nvim-treesitter-context",
+      enabled = false,
+    }
   }
 }

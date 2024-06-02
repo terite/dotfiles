@@ -29,7 +29,10 @@ return {
   'tpope/vim-fugitive',
 
   -- syntax, indent, and filetype plugin files for git file formats
-  'tpope/vim-git',
+  {
+    'tpope/vim-git',
+    enabled = false,
+  },
 
   -- helpers to change delimiters around text
   'tpope/vim-surround',
@@ -46,7 +49,4 @@ return {
       vim.keymap.set('n', '<leader>da', function() require("duck").cook_all() end, {})
     end,
   },
-
-  -- Run :Copilot setup on new devices to get this working
-  "github/copilot.vim",
 }

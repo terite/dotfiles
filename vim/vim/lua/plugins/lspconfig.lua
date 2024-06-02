@@ -66,6 +66,16 @@ return {
       lspconfig.jsonls.setup({})
       lspconfig.cssls.setup{}
 
+      -- pipx install python-lsp-server
+      -- pipx install python-lsp-black
+      lspconfig.pylsp.setup({
+        plugins = {
+          flake8 = {
+            enabled = true,
+          },
+        },
+      })
+
       -- https://luals.github.io/#neovim-install
       -- config from https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#lua_ls
       lspconfig.lua_ls.setup{
