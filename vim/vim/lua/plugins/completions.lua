@@ -6,15 +6,20 @@ return {
     dependencies = {
       "neovim/nvim-lspconfig",
       "hrsh7th/cmp-nvim-lsp",
-      -- "hrsh7th/cmp-buffer",
+      "hrsh7th/cmp-buffer",
       -- "hrsh7th/cmp-path",
       -- "hrsh7th/cmp-cmdline",
-
-      -- For luasnip users.
-      "L3MON4D3/LuaSnip",
+      {
+        "L3MON4D3/LuaSnip",
+        version = "v2.*",
+        build = "make install_jsregexp"
+      },
+      { "rafamadriz/friendly-snippets" },
       "saadparwaiz1/cmp_luasnip",
     },
     config = function()
+      require("luasnip.loaders.from_vscode").lazy_load()
+
       local cmp = require'cmp'
       cmp.setup({
         mapping = cmp.mapping.preset.insert({
@@ -24,9 +29,14 @@ return {
           ['<C-e>'] = cmp.mapping.abort(),
           ['<CR>'] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
         }),
+        snippet = {
+          expand = function(args)
+            require'luasnip'.lsp_expand(args.body)
+          end
+        },
         sources = cmp.config.sources({
           { name = 'nvim_lsp' },
-          { name = 'luasnip' }, -- For luasnip users.
+          { name = 'luasnip' },
         }, {
           { name = 'buffer' },
         })
