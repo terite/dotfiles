@@ -37,3 +37,10 @@ source "$DOTFILES/paths.fish"
 for file in $DOTFILES/*/*.fish;
     source $file;
 end
+
+# pnpm
+set -gx PNPM_HOME "/Users/terite/Library/pnpm"
+if not string match -q -- $PNPM_HOME $PATH
+  set -gx PATH "$PNPM_HOME" $PATH
+end
+# pnpm end
