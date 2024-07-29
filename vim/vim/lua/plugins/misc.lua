@@ -49,4 +49,6 @@ return {
       vim.keymap.set('n', '<leader>da', function() require("duck").cook_all() end, {})
     end,
   },
+
+  "AndrewRadev/linediff.vim",
 }
