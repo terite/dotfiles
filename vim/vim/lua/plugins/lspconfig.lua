@@ -79,6 +79,9 @@ return {
         lspconfig.eslint.setup({})
       end
 
+      -- https://github.com/hashicorp/terraform-ls/blob/main/docs/installation.md
+      lspconfig.terraformls.setup({})
+
       -- pipx install python-lsp-server
       -- pipx install python-lsp-black
       if vim.fn.executable('pylsp') == 1 then
