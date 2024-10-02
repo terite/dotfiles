@@ -1,0 +1,6 @@
+#!/bin/sh
+
+# Thanks, BurntSushi!
+# https://github.com/BurntSushi/ripgrep/issues/196#issuecomment-256673573
+
+exec rg -p "$@" | less -RFX
