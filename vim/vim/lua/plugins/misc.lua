@@ -51,4 +51,6 @@ return {
   },
 
   "AndrewRadev/linediff.vim",
+
+  "towolf/vim-helm",
 }

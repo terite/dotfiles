@@ -94,6 +94,16 @@ return {
         })
       end
 
+      lspconfig.helm_ls.setup {
+        settings = {
+          ['helm-ls'] = {
+            -- yamlls = {
+            --   path = "yaml-language-server",
+            -- }
+          }
+        }
+      }
+
       -- https://luals.github.io/#neovim-install
       -- config from https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#lua_ls
       if vim.fn.executable('lua-language-server') == 1 then
