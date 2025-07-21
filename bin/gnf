@@ -1,14 +1,16 @@
 #!/bin/bash
-set -e
+set -euo pipefail
 
 # Creates a new branch based on latest upstream master
 
 if [[ -z $1 ]]; then
   echo "Usage: gnf <new-branch-name>"
+  echo ""
+  echo "Creates a new (prefixed) branch based on latest upstream master"
   exit
 fi
 
 # avoid tracking this branch
 UPSTREAM_HASH=$(git show-ref --hash origin/master)
 
-git checkout -b $1 $UPSTREAM_HASH
+git checkout -b "terite-$1" $UPSTREAM_HASH
