@@ -44,3 +44,10 @@ if not string match -q -- $PNPM_HOME $PATH
   set -gx PATH "$PNPM_HOME" $PATH
 end
 # pnpm end
+
+# do we have brew openssl? if so, pipenv needs to be configured to use it
+if test -d /opt/homebrew/opt/openssl/
+  _add_path /opt/homebrew/opt/openssl/bin
+  export LDFLAGS="-L/opt/homebrew/opt/openssl/lib"
+  export CPPFLAGS="-I/opt/homebrew/opt/openssl/include"
+end
