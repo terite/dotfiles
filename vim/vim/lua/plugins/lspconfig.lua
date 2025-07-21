@@ -56,9 +56,9 @@ return {
       end
 
       -- https://quick-lint-js.com/install/
-      if vim.fn.executable('quick-lint-js') == 1 then
-        lspconfig.quick_lint_js.setup({})
-      end
+      -- if vim.fn.executable('quick-lint-js') == 1 then
+      --   lspconfig.quick_lint_js.setup({})
+      -- end
 
       -- npm install -g @vtsls/language-server
       if vim.fn.executable('vtsls') == 1 then
@@ -66,18 +66,19 @@ return {
       end
 
       -- npm i -g vscode-langservers-extracted
-      if vim.fn.executable('vscode-html-language-server') == 1 then
-        lspconfig.html.setup({})
-      end
-      if vim.fn.executable('vscode-css-language-server') == 1 then
-        lspconfig.cssls.setup{}
-      end
-      if vim.fn.executable('vscode-json-language-server') == 1 then
-        lspconfig.jsonls.setup({})
-      end
-      if vim.fn.executable('vscode-eslint-language-server') == 1 then
-        lspconfig.eslint.setup({})
-      end
+      -- disabled while investigating 100% cpu bug
+      -- if vim.fn.executable('vscode-html-language-server') == 1 then
+      --   lspconfig.html.setup({})
+      -- end
+      -- if vim.fn.executable('vscode-css-language-server') == 1 then
+      --   lspconfig.cssls.setup{}
+      -- end
+      -- if vim.fn.executable('vscode-json-language-server') == 1 then
+      --   lspconfig.jsonls.setup({})
+      -- end
+      -- if vim.fn.executable('vscode-eslint-language-server') == 1 then
+      --   lspconfig.eslint.setup({})
+      -- end
 
       -- https://github.com/hashicorp/terraform-ls/blob/main/docs/installation.md
       lspconfig.terraformls.setup({})
